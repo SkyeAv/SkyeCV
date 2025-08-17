@@ -1,16 +1,275 @@
+% !TeX root = skye-lane-goetz-cv-aug-2025.tex
 \documentclass[11pt,a4paper]{moderncv}
-\moderncvstyle{classic}
-\moderncvcolor{burgundy}
+\moderncvcolor{black}
+\moderncvstyle{banking}
+\renewcommand{\familydefault}{\sfdefault}
+% --- FIX HEADER COLORS ---
+\usepackage{xcolor}
+\colorlet{headtext}{white}
+\colorlet{namecolor}{white} 
 % --- INCLUDE XMPDATA ---
 \RequirePackage[a-1b]{pdfx}
 % --- PACKAGES ---
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[scale=0.8]{geometry}
+\usepackage[english]{babel}
+\usepackage[scale=0.9]{geometry}
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep, topsep=0pt}
-% --- DOCUMENT
+% --- MODERN COLWIDTHS ---
+\setlength{\hintscolumnwidth}{2.1cm}
+% --- MICRO TYPOGRAPHY ---
+\usepackage{microtype}
+\AtBeginDocument{%
+    \emergencystretch=3em
+    \tolerance=2000
+    \pretolerance=1000
+}
+% --- BEGIN DOCUMENT ---
 \begin{document}
-Hello, \LaTeX!
+% --- PERSONAL DATA ---
+\name{Skye~Lane}{Goetz}
+\title{Biomedical Research Scientist (AI \& Data)}
+% --- NO PHOTO ---
+\makeatletter
+\newlength\@photoframewidth
+\setlength\@photoframewidth{0pt}
+\makeatother
+% --- CUSTOM HEADER ---
+\makeatletter
+\renewcommand*{\namefont}{\fontsize{34}{38}\bfseries\sffamily}
+\renewcommand*{\titlefont}{\large\sffamily\mdseries}
+\renewcommand*{\makecvtitle}{%
+    \par\noindent
+    \parbox[b]{0.6\textwidth}{%
+        {\namefont \@firstname\ \@lastname}\\[0.4ex]
+        {\titlefont \@title}%
+    }%
+    \hfill
+    \parbox[b]{0.38\textwidth}{\raggedleft
+        \ifthenelse{\isundefined{\@mobile}}{}{{\phonesymbol}\enspace\href{tel:+19094979907}{+1 (909) 497-9907}\\}
+        \ifthenelse{\isundefined{\@mobile}}{\ifthenelse{\isundefined{\@phone}}{}{{\phonesymbol}\enspace\href{tel:+19094979907}{+1 (909) 497-9907}\\}}{}
+        {\emailsymbol}\enspace\href{mailto:skye.lane.goetz@gmail.com}{skye.lane.goetz@gmail.com}\\
+        \faLinkedin\enspace
+            \href{https://www.linkedin.com/in/skye-lane-goetz}{skye-lane-goetz}\\
+        \faGithub\enspace
+            \href{https://github.com/SkyeAv}{SkyeAv}\\
+        \faOrcid\enspace
+            \href{https://orcid.org/0009-0007-8373-2352}{0009-0007-8373-2352}%
+    }%
+    \par\vspace{1.5ex}
+    }
+\makeatother
+% --- MAKE TITLE ---
+\makecvtitle
+% --- WORK EXPERIENCE ---
+\section{Work Experience}
+% ### ISB ###
+\cventry
+    {Nov 2024 - Present}
+    {Research Associate (Data Science)}
+    {Institute for Systems Biology (ISB)}
+    {Seattle, WA}
+    {}
+    {%
+        \begin{itemize}
+            \item Placeholder
+        \end{itemize}
+    }
+\cventry
+    {Aug 2024 - Sep 2024}
+    {Data Science Intern}
+    {Institute for Systems Biology (ISB)}
+    {Seattle, WA}
+    {}
+    {%
+        \begin{itemize}
+            \item Placeholder
+        \end{itemize}
+    }
+\cventry
+    {Jun 2024 - Aug 2024}
+    {Summer Intern/Trainee (NSF REU)}
+    {Institute for Systems Biology (ISB)}
+    {Seattle, WA}
+    {}
+    {%
+        \begin{itemize}
+            \item Placeholder
+        \end{itemize}
+    }
+% ### HAYNES LAB ###
+\cventry
+    {Sep 2024 - Nov 2024}
+    {Student Researcher (Computational Subgroup)}
+    {Haynes-Zigler Lab (CalPoly)}
+    {San Luis Obispo, CA}
+    {}
+    {%
+        \begin{itemize}
+            \item Placeholder
+        \end{itemize}
+    }
+% ### WEEST ###
+\cventry
+    {Jan 2024 - Jun 2024}
+    {Student Researcher (PHOS and CRIAS projects)}
+    {CalPoly Water-Energy Sustainability Training Team (WESTT)}
+    {San Luis Obispo, CA}
+    {}
+    {%
+        \begin{itemize}
+            \item Placeholder
+        \end{itemize}
+    }
+% ### FOOD SERVICE ###
+\cventry
+    {Jan 2024 - Jun 2024}
+    {Food Service Worker}
+    {Compass Group USA}
+    {San Luis Obispo, CA}
+    {}
+    {%
+        \begin{itemize}
+            \item Placeholder
+        \end{itemize}
+    }
+% ### GPS ###
+\cventry
+    {Aug 2021 - Sep 2023}
+    {Customer Fulfillment and Logistics}
+    {General Polymer Solutions (GPS Polymers) LLC}
+    {Upland, CA}
+    {}
+    {%
+        \begin{itemize}
+            \item Placeholder
+        \end{itemize}
+    }
+% ### REFFING ###
+\cventry
+    {Jun 2021 - Sep 2023}
+    {US Soccer Grassroots Referee (Grade 8)}
+    {US Soccer Federation}
+    {Upland, CA}
+    {}
+    {%
+        \begin{itemize}
+            \item Placeholder
+        \end{itemize}
+    }
+% ### FIDGET SPINNERS ###
+\cventry
+    {Dec 2015 - Sep 2016}
+    {Founder, President, and CEO}
+    {Kessen Star Spinners}
+    {Upland, CA}
+    {}
+    {%
+        \begin{itemize}
+            \item Placeholder
+        \end{itemize}
+    }
+% --- PROJECTS ---
+\section{Projects}
+% ### TABLASSERT ###
+\cventry
+    {Placeholder - Placeholder}
+    {Placeholder}
+    {Placeholder}
+    {Placeholder}
+    {}
+    {%
+        \begin{itemize}
+            \item Placeholder
+        \end{itemize}
+    }
+% ### MBKG ###
+% ### MOKG ###
+% ### TABLE CONFIG AGENT / CONFIGURATOR ###
+% ### CTML ###
+% ### TBDB? ###
+% --- SKILLS ---
+\section{Skills}
+% ### PROGRAMING ###
+\subsection{Technical Skills}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Languages:} Python, Julia, Nim, Clojure, SQL, Shell Scripting, LaTeX
+    \item \textbf{Data Science:} Pandas, Numpy, Polars, SciPy, Matplotlib, Seaborn
+    \item \textbf{ML/DL:} PyTorch, Scikit-learn, XGBoost, Imblearn
+    \item \textbf{LLMs \& Weak Supervision:} HuggingFace Transformers, PEFT, LoRA, LangChain, Instructor, Snorkel, UWS
+    \item \textbf{Knowledge Graphs:} Ontology, Knowledge Curation, KGX, Centrality Analyses, Graph Neural Networks
+    \item \textbf{NLP:} spaCy, NLTK, Embeddings, Text Classification
+    \item \textbf{Tooling:} Docker, Conda, Poetry, Setuptools, Nix, Slurm
+\end{itemize}
+% ### CHEMISTRY + BIOLOGY ###
+\subsection{Domain Knowledge}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Microbiome \& Multi-omics Data:} Statistical and Computational Analysis of Datasets, Integration of Heterogeneous Biological Data
+    \item \textbf{Computational Chemistry:} Cheminformatics, Quantum Chemistry with ORCA, TDDFT Excited-state Calculations, RDKit, Molecular Modeling
+    \item \textbf{Spectroscopy:} FTIR, $^1$H NMR, $^{13}$C NMR, DEPT
+    \item \textbf{Environmental Engineering:} Algae-based Biofuels and Biofertilizers, Wastewater Treatment Applications
+\end{itemize}
+% ### BUSINESS ###
+\subsection{Additional Competencies}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Business \& Entrepreneurship:} Early-stage Venture Creation, Product Marketing, Small-scale Operations
+    \item \textbf{Sales \& Operations:} Door-to-door Sales Experience, SPIN Selling, Logistics and Client Delivery
+    \item \textbf{Communication \& Mentorship:} Team Mentorship, Scientific Presentations, Public Speaking, Conference Talks
+    \item \textbf{Agribusiness:} Academic Foundation (6 months) prior to Biochemistry Transition
+\end{itemize}
+% --- PUBLICATIONS ---
+\section{Publications}
+% ### SEE .bib FILE ###
+\makeatletter
+\renewenvironment{thebibliography}[1]
+    {%
+    % No heading, just start the list:
+        \list{\@biblabel{\@arabic\c@enumiv}}{%
+            \settowidth\labelwidth{\@biblabel{\@arabic\c@enumiv}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}%
+        }%
+        \sloppy\clubpenalty4000\widowpenalty4000
+        \sfcode`\.=\@m
+    }
+    {%
+        \def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}%
+        \endlist
+    }
+\makeatother
+\nocite{goetz2025mbkg,translator2025,2024multiomics}
+\bibliographystyle{unsrt}
+\bibliography{skye-lane-goetz-cv-aug-2025}
+% --- EDUCATION ---
+\section{Education}
+% ### CALPOLY SLO ###
+\cventry
+    {Sep 2023 - Present}
+    {BS Biochemistry}
+    {California State Polytechnic University (CalPoly)}
+    {San Luis Obispo, CA}
+    {}
+    {%
+        \begin{itemize}
+            \item Placeholder
+        \end{itemize}
+    }
+% ### UPLAND HS ###
+\cventry
+    {Aug 2019 - Jun 2023}
+    {High School Diploma}
+    {Upland High School}
+    {Upland, CA}
+    {}
+    {%
+        \begin{itemize}
+            \item Placeholder
+        \end{itemize}
+    }
+% --- END DOCUMENT ---
 \end{document}
