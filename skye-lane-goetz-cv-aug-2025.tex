@@ -1,5 +1,6 @@
 % !TeX root = skye-lane-goetz-cv-aug-2025.tex
-\documentclass[11pt,a4paper]{moderncv}
+% BUILD WITH `latexmk -f -xelatex -bibtex skye-lane-goetz-cv-aug-2025.tex`
+\documentclass[11pt, legalpaper]{moderncv}
 \moderncvcolor{black}
 \moderncvstyle{banking}
 \renewcommand{\familydefault}{\sfdefault}
@@ -10,21 +11,25 @@
 % --- INCLUDE XMPDATA ---
 \RequirePackage[a-1b]{pdfx}
 % --- PACKAGES ---
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setsansfont{Arial}[Scale=MatchLowercase]
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage[english]{babel}
 \usepackage[scale=0.9]{geometry}
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep, topsep=0pt}
+\usepackage{array}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\usepackage{tabularx}
 % --- MODERN COLWIDTHS ---
 \setlength{\hintscolumnwidth}{2.1cm}
 % --- MICRO TYPOGRAPHY ---
 \usepackage{microtype}
 \AtBeginDocument{%
-    \emergencystretch=3em
-    \tolerance=2000
-    \pretolerance=1000
+  \emergencystretch=3em
+  \tolerance=2000
+  \pretolerance=1000
 }
 % --- BEGIN DOCUMENT ---
 \begin{document}
@@ -36,30 +41,30 @@
 \newlength\@photoframewidth
 \setlength\@photoframewidth{0pt}
 \makeatother
-% --- CUSTOM HEADER ---
+% --- CUSTOM HEADER --- CONFUSING LLM CODE, DON'T TOUCH
 \makeatletter
 \renewcommand*{\namefont}{\fontsize{34}{38}\bfseries\sffamily}
 \renewcommand*{\titlefont}{\large\sffamily\mdseries}
 \renewcommand*{\makecvtitle}{%
-    \par\noindent
-    \parbox[b]{0.6\textwidth}{%
-        {\namefont \@firstname\ \@lastname}\\[0.4ex]
-        {\titlefont \@title}%
-    }%
-    \hfill
-    \parbox[b]{0.38\textwidth}{\raggedleft
-        \ifthenelse{\isundefined{\@mobile}}{}{{\phonesymbol}\enspace\href{tel:+19094979907}{+1 (909) 497-9907}\\}
-        \ifthenelse{\isundefined{\@mobile}}{\ifthenelse{\isundefined{\@phone}}{}{{\phonesymbol}\enspace\href{tel:+19094979907}{+1 (909) 497-9907}\\}}{}
-        {\emailsymbol}\enspace\href{mailto:skye.lane.goetz@gmail.com}{skye.lane.goetz@gmail.com}\\
-        \faLinkedin\enspace
-            \href{https://www.linkedin.com/in/skye-lane-goetz}{skye-lane-goetz}\\
-        \faGithub\enspace
-            \href{https://github.com/SkyeAv}{SkyeAv}\\
-        \faOrcid\enspace
-            \href{https://orcid.org/0009-0007-8373-2352}{0009-0007-8373-2352}%
-    }%
-    \par\vspace{1.5ex}
-    }
+\par\noindent
+\parbox[b]{0.6\textwidth}{%
+{\namefont \@firstname\ \@lastname}\\[0.4ex]
+{\titlefont \@title}%
+}%
+\hfill
+\parbox[b]{0.38\textwidth}{\raggedleft
+\ifthenelse{\isundefined{\@mobile}}{}{{\phonesymbol}\enspace\href{tel:+19094979907}{+1 (909) 497-9907}\\}
+\ifthenelse{\isundefined{\@mobile}}{\ifthenelse{\isundefined{\@phone}}{}{{\phonesymbol}\enspace\href{tel:+19094979907}{+1 (909) 497-9907}\\}}{}
+{\emailsymbol}\enspace\href{mailto:skye.lane.goetz@gmail.com}{skye.lane.goetz@gmail.com}\\
+\faLinkedin\enspace
+\href{https://www.linkedin.com/in/skye-lane-goetz}{skye-lane-goetz}\\
+\faGithub\enspace
+\href{https://github.com/SkyeAv}{SkyeAv}\\
+\faOrcid\enspace
+\href{https://orcid.org/0009-0007-8373-2352}{0009-0007-8373-2352}%
+}%
+\par\vspace{1.5ex}
+}
 \makeatother
 % --- MAKE TITLE ---
 \makecvtitle
@@ -67,209 +72,327 @@
 \section{Work Experience}
 % ### ISB ###
 \cventry
-    {Nov 2024 - Present}
-    {Research Associate (Data Science)}
-    {Institute for Systems Biology (ISB)}
-    {Seattle, WA}
-    {}
-    {%
-        \begin{itemize}
-            \item Placeholder
-        \end{itemize}
-    }
-\cventry
-    {Aug 2024 - Sep 2024}
-    {Data Science Intern}
-    {Institute for Systems Biology (ISB)}
-    {Seattle, WA}
-    {}
-    {%
-        \begin{itemize}
-            \item Placeholder
-        \end{itemize}
-    }
-\cventry
-    {Jun 2024 - Aug 2024}
-    {Summer Intern/Trainee (NSF REU)}
-    {Institute for Systems Biology (ISB)}
-    {Seattle, WA}
-    {}
-    {%
-        \begin{itemize}
-            \item Placeholder
-        \end{itemize}
-    }
+{NOV 2024 - PRESENT}
+{Research Associate (Data Science) [Hood Lab]}
+{Institute for Systems Biology (ISB)}
+{Seattle, WA}
+{}
+{%
+\begin{itemize}
+\item Placeholder
+\end{itemize}
+}
 % ### HAYNES LAB ###
 \cventry
-    {Sep 2024 - Nov 2024}
-    {Student Researcher (Computational Subgroup)}
-    {Haynes-Zigler Lab (CalPoly)}
-    {San Luis Obispo, CA}
-    {}
-    {%
-        \begin{itemize}
-            \item Placeholder
-        \end{itemize}
-    }
+{SEP 2024 - NOV 2024}
+{Student Researcher (Computational Subgroup)}
+{Haynes-Zigler Lab (CalPoly)}
+{San Luis Obispo, CA}
+{}
+{%
+\begin{itemize}
+\item Placeholder
+\end{itemize}
+}
+% ### ISB AGAIN ###
+\cventry
+{AUG 2024 - SEP 2024}
+{Data Science Intern [Hood Lab]}
+{Institute for Systems Biology (ISB)}
+{Seattle, WA}
+{}
+{%
+\begin{itemize}
+\item Placeholder
+\end{itemize}
+}
+\cventry
+{JUN 2024 - AUG 2024}
+{Summer Intern/Trainee (NSF REU) [Hood-Price Lab]}
+{Institute for Systems Biology (ISB)}
+{Seattle, WA}
+{}
+{%
+\begin{itemize}
+\item Placeholder
+\end{itemize}
+}
 % ### WEEST ###
 \cventry
-    {Jan 2024 - Jun 2024}
-    {Student Researcher (PHOS and CRIAS projects)}
-    {CalPoly Water-Energy Sustainability Training Team (WESTT)}
-    {San Luis Obispo, CA}
-    {}
-    {%
-        \begin{itemize}
-            \item Placeholder
-        \end{itemize}
-    }
+{JAN 2024 - JUN 2024}
+{Student Researcher (PHOS and CRIAS projects)}
+{CalPoly Water-Energy Sustainability Training Team (WESTT)}
+{San Luis Obispo, CA}
+{}
+{%
+\begin{itemize}
+\item Placeholder
+\end{itemize}
+}
 % ### FOOD SERVICE ###
 \cventry
-    {Jan 2024 - Jun 2024}
-    {Food Service Worker}
-    {Compass Group USA}
-    {San Luis Obispo, CA}
-    {}
-    {%
-        \begin{itemize}
-            \item Placeholder
-        \end{itemize}
-    }
+{JAN 2024 - JUN 2024}
+{Food Service Worker}
+{Compass Group USA}
+{San Luis Obispo, CA}
+{}
+{%
+\begin{itemize}
+\item Placeholder
+\end{itemize}
+}
 % ### GPS ###
 \cventry
-    {Aug 2021 - Sep 2023}
-    {Customer Fulfillment and Logistics}
-    {General Polymer Solutions (GPS Polymers) LLC}
-    {Upland, CA}
-    {}
-    {%
-        \begin{itemize}
-            \item Placeholder
-        \end{itemize}
-    }
+{AUG 2021 - SEP 2023}
+{Customer Fulfillment and Logistics}
+{General Polymer Solutions (GPS Polymers) LLC}
+{Upland, CA}
+{}
+{%
+\begin{itemize}
+\item Placeholder
+\end{itemize}
+}
 % ### REFFING ###
 \cventry
-    {Jun 2021 - Sep 2023}
-    {US Soccer Grassroots Referee (Grade 8)}
-    {US Soccer Federation}
-    {Upland, CA}
-    {}
-    {%
-        \begin{itemize}
-            \item Placeholder
-        \end{itemize}
-    }
+{JUN 2021 - SEP 2023}
+{US Soccer Grassroots Referee (Grade 8)}
+{US Soccer Federation}
+{Upland, CA}
+{}
+{%
+\begin{itemize}
+\item Placeholder
+\end{itemize}
+}
 % ### FIDGET SPINNERS ###
 \cventry
-    {Dec 2015 - Sep 2016}
-    {Founder, President, and CEO}
-    {Kessen Star Spinners}
-    {Upland, CA}
-    {}
-    {%
-        \begin{itemize}
-            \item Placeholder
-        \end{itemize}
-    }
-% --- PROJECTS ---
-\section{Projects}
-% ### TABLASSERT ###
-\cventry
-    {Placeholder - Placeholder}
-    {Placeholder}
-    {Placeholder}
-    {Placeholder}
-    {}
-    {%
-        \begin{itemize}
-            \item Placeholder
-        \end{itemize}
-    }
-% ### MBKG ###
-% ### MOKG ###
-% ### TABLE CONFIG AGENT / CONFIGURATOR ###
-% ### CTML ###
-% ### TBDB? ###
+{DEC 2015 - SEP 2016}
+{Founder, President, and CEO}
+{Kessen Star Spinners}
+{Upland, CA}
+{}
+{%
+\begin{itemize}
+\item Placeholder
+\end{itemize}
+}
 % --- SKILLS ---
 \section{Skills}
 % ### PROGRAMING ###
 \subsection{Technical Skills}
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Languages:} Python, Julia, Nim, Clojure, SQL, Shell Scripting, LaTeX
-    \item \textbf{Data Science:} Pandas, Numpy, Polars, SciPy, Matplotlib, Seaborn
-    \item \textbf{ML/DL:} PyTorch, Scikit-learn, XGBoost, Imblearn
-    \item \textbf{LLMs \& Weak Supervision:} HuggingFace Transformers, PEFT, LoRA, LangChain, Instructor, Snorkel, UWS
-    \item \textbf{Knowledge Graphs:} Ontology, Knowledge Curation, KGX, Centrality Analyses, Graph Neural Networks
-    \item \textbf{NLP:} spaCy, NLTK, Embeddings, Text Classification
-    \item \textbf{Tooling:} Docker, Conda, Poetry, Setuptools, Nix, Slurm
+\item \textbf{Languages:} Python, Elixir, SQL, Shell Scripting, LaTeX, Julia, Nim, Clojure
+\item \textbf{Data Science:} Polars, Spark, Numpy, Matplotlib, Sqlite, Postgres, DuckDB
+\item \textbf{AI/ML:} PyTorch, LightGBM, Scikit-learn, LangChain, Snorkel, Transformers, PEFT, ChromaDB
+\item \textbf{Knowledge Graphs:} Graph Databases, Ontology, KGX, Centrality, Graph Neural Networks
+\item \textbf{NLP:} spaCy, NLTK, Embeddings, Text Classification, TF-IDF
+\item \textbf{DevOps:} Nix, Docker, Setuptools, Mix, Pytest, Kubernetes
 \end{itemize}
 % ### CHEMISTRY + BIOLOGY ###
 \subsection{Domain Knowledge}
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Microbiome \& Multi-omics Data:} Statistical and Computational Analysis of Datasets, Integration of Heterogeneous Biological Data
-    \item \textbf{Computational Chemistry:} Cheminformatics, Quantum Chemistry with ORCA, TDDFT Excited-state Calculations, RDKit, Molecular Modeling
-    \item \textbf{Spectroscopy:} FTIR, $^1$H NMR, $^{13}$C NMR, DEPT
-    \item \textbf{Environmental Engineering:} Algae-based Biofuels and Biofertilizers, Wastewater Treatment Applications
+\item \textbf{Biology:} Heterogenous Multiomic Data, Shotgun Metagenomics, Polygenic Risk Scores, ELISA
+\item \textbf{Chemistry:} DFT, Mass Spectrometry, $^1$H NMR, FTIR, Organic Synthesis, Equillibreum
+\item \textbf{Data Science:} PCA, KernelPCA, UMAP, Pearson Correlations, Logistic Regression, Deep Learning, ANOVA
+\item \textbf{Business:} SPIN Selling, Door-To-Door Sales, Product Marketing, Agribusiness, Microeconomics, Macroeconomics
 \end{itemize}
 % ### BUSINESS ###
 \subsection{Additional Competencies}
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Business \& Entrepreneurship:} Early-stage Venture Creation, Product Marketing, Small-scale Operations
-    \item \textbf{Sales \& Operations:} Door-to-door Sales Experience, SPIN Selling, Logistics and Client Delivery
-    \item \textbf{Communication \& Mentorship:} Team Mentorship, Scientific Presentations, Public Speaking, Conference Talks
-    \item \textbf{Agribusiness:} Academic Foundation (6 months) prior to Biochemistry Transition
+\item \textbf{Scientific Communication:} Lab Meetings, Conference Presentations, Journal Writing, Funding Proposals
+\item \textbf{Leadership and Collaboration:} Mentoring, Team System Design, Knowledge Graph, Microbiome, and Software Consulting
 \end{itemize}
 % --- PUBLICATIONS ---
 \section{Publications}
 % ### SEE .bib FILE ###
 \makeatletter
 \renewenvironment{thebibliography}[1]
-    {%
-    % No heading, just start the list:
-        \list{\@biblabel{\@arabic\c@enumiv}}{%
-            \settowidth\labelwidth{\@biblabel{\@arabic\c@enumiv}}%
-            \leftmargin\labelwidth
-            \advance\leftmargin\labelsep
-            \usecounter{enumiv}%
-            \let\p@enumiv\@empty
-            \renewcommand\theenumiv{\@arabic\c@enumiv}%
-        }%
-        \sloppy\clubpenalty4000\widowpenalty4000
-        \sfcode`\.=\@m
-    }
-    {%
-        \def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}%
-        \endlist
-    }
+{%
+% No heading, just start the list:
+\list{\@biblabel{\@arabic\c@enumiv}}{%
+\settowidth\labelwidth{\@biblabel{\@arabic\c@enumiv}}%
+\leftmargin\labelwidth
+\advance\leftmargin\labelsep
+\usecounter{enumiv}%
+\let\p@enumiv\@empty
+\renewcommand\theenumiv{\@arabic\c@enumiv}%
+}%
+\sloppy\clubpenalty4000\widowpenalty4000
+\sfcode`\.=\@m
+}
+{%
+\def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}%
+\endlist
+}
 \makeatother
-\nocite{goetz2025mbkg,translator2025,2024multiomics}
+\nocite{goetz2025mbkg, translator2025, qin2024multiomics}
 \bibliographystyle{unsrt}
 \bibliography{skye-lane-goetz-cv-aug-2025}
 % --- EDUCATION ---
 \section{Education}
 % ### CALPOLY SLO ###
 \cventry
-    {Sep 2023 - Present}
-    {BS Biochemistry}
-    {California State Polytechnic University (CalPoly)}
-    {San Luis Obispo, CA}
-    {}
-    {%
-        \begin{itemize}
-            \item Placeholder
-        \end{itemize}
-    }
+{Feb 2024 - Present}
+{BS Biochemistry}
+{California State Polytechnic University (Cal Poly)}
+{San Luis Obispo, CA}
+{}
+{%
+\begin{itemize}
+\item GPA: 3.626/4.000
+\item Graduation Date: Spring Quarter 2026
+\item Consulted on Machine Learning Senior Projects for Computer Engineering Students
+  \begin{itemize}
+  \item Improved AUC by 0.15
+  \end{itemize}
+\item Developed and Trialed Computational and Machine Learning Techniques for Biochemical Assays in Lab
+  \begin{itemize}
+  \item Improved R$^2$ Coefficients by 0.08 on Average
+  \end{itemize}
+\item Trialed Modifications to Organic Syntheses in Lab
+  \begin{itemize}
+  \item Speed Up Cited Procedure by 30 Minutes
+  \end{itemize}
+\item Consulted on Multinomial Classification Efforts in the Bioinformatics Lab
+\end{itemize}
+}
+\cventry
+{SEP 2023 - FEB 2024}
+{BS Agribusiness}
+{California State Polytechnic University, San Luis Obispo}
+{San Luis Obispo, CA}
+{}
+{%
+\begin{itemize}
+\item Completed 5 Months of Coursework Before Transitioning to Biochemistry
+\item Wrote a Comprehensive Report on the Economics of the California Almond Industry for the 2022 Growing Season
+\end{itemize}
+}
 % ### UPLAND HS ###
 \cventry
-    {Aug 2019 - Jun 2023}
-    {High School Diploma}
-    {Upland High School}
-    {Upland, CA}
-    {}
-    {%
-        \begin{itemize}
-            \item Placeholder
-        \end{itemize}
-    }
+{AUG 2019 - JUN 2023}
+{High School Diploma}
+{Upland High School}
+{Upland, CA}
+{}
+{%
+\begin{itemize}
+\item GPA: 4.000/4.000
+\item High School Soccer 4 Years
+  \begin{itemize}
+  \item Team Captain 3 Years
+  \item Varsity Coaches Award
+  \item Varsity Most Improved Player Award
+  \item 2021-2022 Golden Boot
+  \end{itemize}
+\item Designed (with CAD) and 3D Printed Ceramic Stamps for the Ceramics Studio
+\item Wrote AP Physics Notes Programs for Class TI84s
+\end{itemize}
+}
+% --- TALKS + PRESENTATIONS ---
+\section{Talks and Presentations}
+% ### CONFERENCE + EXTERNAL ###
+\subsection*{Conference and External}
+\begin{itemize}[leftmargin=*]
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{This Time on MultiomicsKG: Edge Scoring!}
+NCATS Biomedical Data Translator Fall Relay (Bethesda, MD) & SEP 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{Gut Microbiome Signatures of Vegan, Vegetarian, and Omnivore Diets across 21,561 Individuals}
+ISB Micro Journal Club (Seattle, WA) & AUG 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{Updates on the New MultiomicsKG}
+NCATS Biomedical Data Translator Summer Relay (Bethesda, MD) & JUN 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{MicrobiomeKG: Extracting Relationships between the Microbiome and Host Health from Published Supplementary Materials}
+Cal Poly Bailey College Research Symposium (San Luis Obispo, CA) & MAY 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{MultiomicsKG: Extracting Knowledge Assertions from Tabular Data in Supplementary Materials}
+NCATS Biomedical Data Translator Spring Relay (Bethesda, MD) & FEB 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{MicrobiomeKG (v0.1): A Microbiome-Centric Knowledge Graph Facilitating Human Reasoning Across the Biomedical Domain}
+ISB Summer Research Poster Session (Seattle, WA) & JUN 2024 \\
+\end{tabularx}
+\end{itemize}
+% ### LAB + GROUP ###
+\subsection*{Group and Lab}
+\begin{itemize}[leftmargin=*]
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{This Time on MultiomicsKG: Edge Scores and Agentic Configurators}
+ISB Hood Lab Meeting (Seattle, WA) & AUG 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{MicrobiomeKG: Connecting the Microbiome and Host Health through Knowledge Graphs}
+ISB Thorsson-Shmulevich Lab Meeting (Seattle, WA) & JUL 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{MicrobiomeKG: Connecting the Microbiome and Host Health through Knowledge Graphs}
+ISB Gibbons Lab Meeting (Seattle, WA) & JUL 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{Tablassert(3.0): Transforming Tabular Data Into Knowledge Graphs}
+ISB Hood Lab Meeting (Seattle, WA) & FEB 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{MicrobiomeKG: Story of My Internship at ISB}
+ISB Hood-Price Lab Meeting (Seattle, WA) & AUG 2024 \\
+\end{tabularx}
+\end{itemize}
+% --- PROJECTS ---
+\section{Projects}
+% ### TABLASSERT ###
+\cventry
+{Placeholder - Placeholder}  % DATES?
+{Placeholder}  % DESC
+{Tablassert}  % TITLE
+{Placeholder}  % LOCATION?
+{}
+{% LIST
+\begin{itemize}
+\item Placeholder
+\end{itemize}
+}
+% ### MOKG ###
+\cventry
+{Placeholder - Placeholder}
+{Placeholder}
+{MultiomicsKG (and MicrobiomeKG)}
+{Placeholder}
+{}
+{%
+\begin{itemize}
+\item Placeholder
+\end{itemize}
+}
+% ### TABLE CONFIG AGENT ###
+\cventry
+{Placeholder - Placeholder}
+{Placeholder}
+{Table Config Agent}
+{Placeholder}
+{}
+{%
+\begin{itemize}
+\item Placeholder
+\end{itemize}
+}
+% ### CTML ###
+\cventry
+{Placeholder - Placeholder}
+{Placeholder}
+{Clinical Trials Classifier}
+{Placeholder}
+{}
+{%
+\begin{itemize}
+\item Placeholder
+\end{itemize}
+}
 % --- END DOCUMENT ---
 \end{document}
