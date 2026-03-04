@@ -88,31 +88,34 @@ Seattle, WA\\
 {}
 {%
 	\begin{itemize}
-		\item Published MicrobiomeKG Paper with 115,000 Edges from 40 Papers
-		      \begin{itemize}
-			      \item Developed an Edge Scoring ResNet to Provide a Unified Comparator Across Heterogeneous Data,
-			            \\ Weighted Enabling Centrality Analyses
-		      \end{itemize}
-		\item Created the MultiomicsKG with 800,000 Edges (with 52 Papers) Connecting Multiomic Factors
-		      \\ with Host Health (also for the NCATS Biochemical Data Translator)
-		      \begin{itemize}
-			      \item Presented Too Multiple Subject-Matter Experts to Drive Development Before Scaling to Millions of Edges
-			      \item Worked with a Clinician (MD) to Verify Content and Suggest Improvements
-		      \end{itemize}
-		\item Improved and Maintained a Declarative Knowledge Extractor for Our Team
-		      \begin{itemize}
-			      \item Reduced Knowledge Graph Generation Time from 1 Week to 8 Minutes
-			      \item Improved Ontology Match Rates by 50\%
-			      \item Developed an AI Agent with LangGraph that Drafts Configuration with Minimal Natural Language Inputs
-		      \end{itemize}
-		\item Co-Mentored a Clinical Trials Machine Learning Intern
-		      \begin{itemize}
-			      \item Scaled Her Project (Classifying Untrustworthy Reporting in the Clinical Trials Database) After She Left
-			      \item Expanded Clinical Trial Data With Embeddings (For High Cardinality Text Data)
-			      \item Increased AUC from 0.63 to 0.90 with Expanded Data, Weak Supervision, and a New Model Architecture
-			      \item Presented Generalized Work to Subject-Matter Experts to Drive Development of a Sucess Classifier for Early
-			            \\ Phase Clinical Trials
-		      \end{itemize}
+		\item Engineered MultiomicsKG, a 1M+ edge (QC in progress) multiomics knowledge graph integrating genomics,
+		      proteomics, and microbiome data across 52+ papers; a superset of published MicrobiomeKG
+			      [\href{https://github.com/SkyeAv/Tablassert}{Tablassert}]
+		\item Refactored knowledge graph extraction from 800GB SQLite to 300GB DuckDB OLAP, reducing query time
+		      from \textasciitilde 10 minutes to 4--11 seconds (\textasciitilde 100--1000x) using Polars lazy frames,
+		      Pydantic schemas, and compact CURIE encoding
+		\item Built QualifiersMCP [\href{https://github.com/SkyeAv/QualifiersMCP}{GitHub}], an MCP server for authoring
+		      and validating Tablassert table configs against Biolink qualifier ontology; deployed via Nix flake
+		\item Co-mentored a master's student on a clinical trial classifier; expanded the pipeline with BERT sentence
+		      transformers, incremental PCA, and LightGBM, improving AUC from 0.63 to 0.90 across 3 datasets
+		\item Developed a LangGraph-based AI agent for automated knowledge graph configuration from natural language,
+		      using a LoRA/P-tuning fine-tuned LLM via HuggingFace PEFT
+		\item Developed consortium MCP tooling and a FastAPI + Neo4j query interface for LLM-accessible MultiomicsKG
+		      subgraph retrieval
+		\item Published MicrobiomeKG [\href{https://github.com/SkyeAv/Tablassert}{paper}], a 115k-edge microbiome
+		      knowledge graph spanning 40 curated papers with ResNet-based edge scoring
+	\end{itemize}
+}
+\cventry
+{2025}
+{AI/Tech Lead -- Parker, OpenAI-Sponsored Cal Poly Hackathon [\href{https://github.com/POLY-PROMPT-TEAM-7}{GitHub}] (\textasciitilde30\% acceptance)}
+{Cal Poly}
+{San Luis Obispo, CA}
+{}
+{%
+	\begin{itemize}
+		\item Led a LangGraph pipeline for course-material knowledge graph generation using Canvas API ingestion,
+		      LinkML ontology modeling, DuckDB storage, and LLM entity extraction from PDFs, PPTs, and Excel files
 	\end{itemize}
 }
 % ### HAYNES LAB ###
@@ -124,11 +127,8 @@ Seattle, WA\\
 {}
 {%
 	\begin{itemize}
-		\item Leveraged TD-DFT Calculations to Map the Stability of Various Thiocarboxylate Derivatives
-		\item Developed a Declarative ORCA Wrapper (in Julia) to Increase Our Labs Accessibility to DFT Calculations
-		      \begin{itemize}
-			      \item The Wrapper was 3 Times Faster at Parsing Output into a Report than Previous Lab Scripts
-		      \end{itemize}
+		\item Ran TD-DFT calculations on thiocarboxylate derivatives and built a Julia ORCA wrapper that parsed
+		      outputs 3x faster than prior lab scripts
 	\end{itemize}
 }
 % ### ISB AGAIN ###
@@ -140,12 +140,7 @@ Seattle, WA\\
 {}
 {%
 	\begin{itemize}
-		\item Developed (Tablassert) a Declarative Framework to Build a KGX Compliant Knowledge Graph from
-		      \\ Tabular Biomedical Data in the Supplementary Materials of Academic Papers (Mostly PubMed)
-		      \begin{itemize}
-			      \item Improved Scalability By Eliminating the Need to Write Scripts for Every Tabular Material
-		      \end{itemize}
-		\item Co-Authored a Preprint on MicrobiomeKG, Prototyping PubMed Table Mining Methods
+		\item Developed the Tablassert framework and co-authored the MicrobiomeKG preprint
 	\end{itemize}
 }
 \cventry
@@ -156,15 +151,7 @@ Seattle, WA\\
 {}
 {%
 	\begin{itemize}
-		\item Built a 40,000 Edge KGK Compliant Knowledge Graph Linking the Microbiome and Host Health
-		      \\ for the NCATS Biomedical Data Translator (MicrobiomeKG)
-		      \begin{itemize}
-			      \item Data Mined Excel Spreadsheets from Supplementary Materials of Academic Papers
-			            \\ to Build the Graph
-		      \end{itemize}
-		\item Presented across Institutional and National Settings to Collect Feedback from Subject-Matter
-		      \\ Experts to Drive Development
-		\item Collaborated in a +200 Member Consortium
+		\item Built a 40k-edge MicrobiomeKG prototype and presented it to the 200+ member CATRAX consortium
 	\end{itemize}
 }
 % ### WEEST ###
