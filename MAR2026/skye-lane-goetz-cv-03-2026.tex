@@ -95,9 +95,9 @@
 {%
 	\begin{itemize}
 		\item Engineered MultiomicsKG, a 1M+ edge (QC in progress) multiomics knowledge graph integrating genomics, proteomics, and microbiome data across 52+ papers for the NCATS Biomedical Data Translator; a superset of published MicrobiomeKG 
-		\item Refactored knowledge graph extraction from 800GB SQLite to 300GB DuckDB OLAP, reducing query time from \textasciitilde 10 minutes to 4--11 seconds (\textasciitilde 100--1000x) using Polars lazy frames, Pydantic schemas, and compact CURIE encoding (\colorhref{https://skyeav.github.io/Tablassert/}{GitHub})
+		\item Refactored knowledge graph extraction from 800GB SQLite to 300GB DuckDB OLAP, reducing query time from \textasciitilde 10 minutes to 4--11 seconds (\textasciitilde 100--1000x) using Polars lazy frames, Pydantic schemas, and compact CURIE NER (\colorhref{https://skyeav.github.io/Tablassert/}{GitHub})
 		\item Built \colorhref{https://github.com/SkyeAv/QualifiersMCP}{QualifiersMCP}, an MCP server for authoring and validating Tablassert table configs against Biolink qualifier ontology; deployed via Nix flake
-		\item Co-mentored a master's student on a \colorhref{https://github.com/SkyeAv/CTClassifier}{clinical trial classifier}; expanded the pipeline with BERT sentence transformers, incremental PCA, and LightGBM, improving AUC from 0.63 to 0.90 across 3 datasets
+		\item Co-mentored a master's student on a \colorhref{https://github.com/SkyeAv/CTClassifier}{clinical trial classifier}; expanded the pipeline with BERT sentence transformers, incremental PCA, Autoencoders, and LightGBM, improving AUC from 0.63 to 0.90 across 3 datasets
 		\item Developed a \colorhref{https://github.com/SkyeAv/TableConfigAgent}{LangChain-based AI agent} for automated knowledge graph configuration from natural language, using a LoRA/P-tuning fine-tuned LLM via HuggingFace PEFT
 		\item Developed consortium MCP tooling and a FastAPI + Neo4j query interface for LLM-accessible MultiomicsKG subgraph retrieval
 		\item Published \colorhref{https://www.frontiersin.org/journals/systems-biology/articles/10.3389/fsysb.2025.1544432/full}{MicrobiomeKG}, a 115k-edge microbiome knowledge graph spanning 40 curated papers with ResNet-based edge scoring
@@ -189,7 +189,7 @@
 \section{Education}
 % ### CALPOLY SLO ###
 \cventry
-{Feb 2024 -- June 2026 (Confirmed)}
+{Feb 2024 -- Jun 2026 (Confirmed)}
 {B.S. Biochemistry}
 {California State Polytechnic University, San Luis Obispo}
 {San Luis Obispo, CA}
