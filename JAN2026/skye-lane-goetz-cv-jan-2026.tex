@@ -1,0 +1,460 @@
+% !TeX root = skye-lane-goetz-cv-jan-2026.tex
+% BUILD WITH `latexmk -f -xelatex -bibtex skye-lane-goetz-cv-nov-2025.tex`
+\documentclass[11pt]{moderncv}
+\moderncvcolor{black}
+\moderncvstyle{banking}
+\renewcommand{\familydefault}{\sfdefault}
+% --- FIX HEADER COLORS ---
+\usepackage{xcolor}
+\colorlet{headtext}{white}
+\colorlet{namecolor}{white} 
+% --- INCLUDE XMPDATA ---
+\RequirePackage[a-1b]{pdfx}
+% --- PACKAGES ---
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setsansfont{Arial}[Scale=MatchLowercase]
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[english]{babel}
+\usepackage[scale=0.9]{geometry}
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+\usepackage{array}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\usepackage{tabularx}
+\usepackage{hyperref}
+% --- MODERN COLWIDTHS ---
+\setlength{\hintscolumnwidth}{2.1cm}
+% --- MICRO TYPOGRAPHY ---
+\usepackage{microtype}
+\AtBeginDocument{%
+  \emergencystretch=3em
+  \tolerance=2000
+  \pretolerance=1000
+}
+% --- BEGIN DOCUMENT ---
+\begin{document}
+% --- PERSONAL DATA ---
+\name{Skye~Lane}{Goetz}
+\title{Biomedical Research Scientist (AI \& Data)}
+% --- NO PHOTO ---
+\makeatletter
+\newlength\@photoframewidth
+\setlength\@photoframewidth{0pt}
+\makeatother
+% --- CUSTOM HEADER --- CONFUSING LLM CODE, DON'T TOUCH
+\makeatletter
+\renewcommand*{\namefont}{\fontsize{34}{38}\bfseries\sffamily}
+\renewcommand*{\titlefont}{\large\sffamily\mdseries}
+\renewcommand*{\makecvtitle}{%
+\par\noindent
+\parbox[b]{0.6\textwidth}{%
+{\namefont \@firstname\ \@lastname}\\[0.4ex]
+{\titlefont \@title}%
+}%
+\hfill
+\parbox[b]{0.38\textwidth}{\raggedleft
+\ifthenelse{\isundefined{\@mobile}}{}{{\phonesymbol}\enspace\href{tel:+19094979907}{+1 (909) 497-9907}\\}
+\ifthenelse{\isundefined{\@mobile}}{\ifthenelse{\isundefined{\@phone}}{}{{\phonesymbol}\enspace\href{tel:+19094979907}{+1 (909) 497-9907}\\}}{}
+{\emailsymbol}\enspace\href{mailto:skye.lane.goetz@gmail.com}{skye.lane.goetz@gmail.com}\\
+\faLinkedin\enspace
+\href{https://www.linkedin.com/in/skye-lane-goetz}{skye-lane-goetz}\\
+\faGithub\enspace
+\href{https://github.com/SkyeAv}{SkyeAv}\\
+\faOrcid\enspace
+\href{https://orcid.org/0009-0007-8373-2352}{0009-0007-8373-2352}%
+}%
+\par\vspace{1.5ex}
+}
+\makeatother
+% --- MAKE TITLE ---
+\makecvtitle
+% --- SKILLS ---
+\section{Skills}
+% ### TECHNICAL ###
+\subsection{Technical Skills}
+\begin{itemize}[leftmargin=*]
+\item \textbf{Languages:} Python, Elixir, SQL, Shell Scripting, LaTeX, Julia, Nim, Clojure
+\item \textbf{Data Science:} Polars, Spark, Numpy, Matplotlib, Sqlite, Postgres, DuckDB
+\item \textbf{AI/ML:} PyTorch, LightGBM, Scikit-learn, LangChain, MCP, Snorkel, Transformers, PEFT, ChromaDB
+\item \textbf{Knowledge Graphs:} Graph Databases, Ontology, KGX, Centrality, Graph Neural Networks
+\item \textbf{NLP:} spaCy, NLTK, Embeddings, Text Classification, TF-IDF
+\item \textbf{DevOps:} Nix, Docker, Setuptools, Mix, Pytest, FastAPI, Kubernetes
+\end{itemize}
+% ### DOMAIN KNOWLEDGE ###
+\subsection{Domain Knowledge}
+\begin{itemize}[leftmargin=*]
+\item \textbf{Biology:} Heterogenous Multiomic Data, Shotgun Metagenomics, Polygenic Risk Scores, ELISA
+\item \textbf{Chemistry:} DFT, Mass Spectrometry, $^1$H NMR, FTIR, Organic Synthesis, Equillibreum
+\item \textbf{Data Science:} PCA, KernelPCA, UMAP, Pearson Correlations, Logistic Regression, Deep Learning, ANOVA
+\item \textbf{Business:} SPIN Selling, Door-To-Door Sales, Product Marketing, Agribusiness, Microeconomics, Macroeconomics
+\end{itemize}
+% ### ADDITIONAL ###
+\subsection{Additional Competencies}
+\begin{itemize}[leftmargin=*]
+\item \textbf{Scientific Communication:} Lab Meetings, Conference Presentations, Journal Writing, Funding Proposals
+\item \textbf{Leadership and Collaboration:} Mentoring, Collaborative Learning, Team System Design, Consulting, Intermediate Spanish
+\item \textbf{Hobbies:} Cooking, Skiing, Geometry Dash, Gardening, Travel, Hiking
+\end{itemize}
+% --- WORK EXPERIENCE ---
+\section{Work Experience}
+% ### ISB ###
+\cventry
+{Nov 2024 - Present}
+{Research Associate (Data Science) [Hood Lab]}
+{Institute for Systems Biology (ISB)}
+{Seattle, WA}
+{}
+{%
+\begin{itemize}
+\item Published MicrobiomeKG Paper with 115,000 Edges from 40 Papers
+  \begin{itemize}
+  \item Developed an Edge Scoring ResNet to Provide a Unified Comparator Across Heterogeneous Data,
+        \\ Weighted Enabling Centrality Analyses
+  \end{itemize}
+\item Created the MultiomicsKG with 800,000 Edges (with 52 Papers) Connecting Multiomic Factors
+      \\ with Host Health (also for the NCATS Biochemical Data Translator)
+  \begin{itemize}
+  \item Presented Too Multiple Subject-Matter Experts to Drive Development Before Scaling to Millions of Edges
+  \item Worked with a Clinician (MD) to Verify Content and Suggest Improvements
+  \end{itemize}
+\item Improved and Maintained a Declarative Knowledge Extractor for Our Team
+  \begin{itemize}
+  \item Reduced Knowledge Graph Generation Time from 1 Week to 8 Minutes
+  \item Improved Ontology Match Rates by 50\%
+  \item Developed an AI Agent with LangChain that Drafts Configuration with Minimal Natural Language Inputs
+  \end{itemize}
+\item Co-Mentored a Clinical Trials Machine Learning Intern
+  \begin{itemize}
+  \item Scaled Her Project (Classifying Untrustworthy Reporting in the Clinical Trials Database) After She Left
+  \item Expanded Clinical Trial Data With Embeddings (For High Cardinality Text Data)
+  \item Increased AUC from 0.63 to 0.90 with Expanded Data, Weak Supervision, and a New Model Architecture
+  \item Presented Generalized Work to Subject-Matter Experts to Drive Development of a Sucess Classifier for Early
+        \\ Phase Clinical Trials
+  \end{itemize}
+\end{itemize}
+}
+% ### HAYNES LAB ###
+\cventry
+{Sep 2024 - Nov 2024}
+{Student Researcher (Computational Subgroup)}
+{Zigler-Haynes Lab (CalPoly)}
+{San Luis Obispo, CA}
+{}
+{%
+\begin{itemize}
+\item Leveraged TD-DFT Calculations to Map the Stability of Various Thiocarboxylate Derivatives
+\item Developed a Declarative ORCA Wrapper (in Julia) to Increase Our Labs Accessibility to DFT Calculations
+  \begin{itemize}
+  \item The Wrapper was 3 Times Faster at Parsing Output into a Report than Previous Lab Scripts
+  \end{itemize}
+\end{itemize}
+}
+% ### ISB AGAIN ###
+\cventry
+{Aug 2024 - Sep 2024}
+{Data Science Intern [Hood Lab]}
+{Institute for Systems Biology (ISB)}
+{Seattle, WA}
+{}
+{%
+\begin{itemize}
+\item Developed (Tablassert) a Declarative Framework to Build a KGX Compliant Knowledge Graph from
+      \\ Tabular Biomedical Data in the Supplementary Materials of Academic Papers (Mostly PubMed)
+  \begin{itemize}
+  \item Improved Scalability By Eliminating the Need to Write Scripts for Every Tabular Material
+  \end{itemize}
+\item Co-Authored a Preprint on MicrobiomeKG, Prototyping PubMed Table Mining Methods
+\end{itemize}
+}
+\cventry
+{Jun 2024 - Aug 2024}
+{Summer Intern/Trainee (NSF REU) [Hood-Price Lab]}
+{Institute for Systems Biology (ISB)}
+{Seattle, WA}
+{}
+{%
+\begin{itemize}
+\item Built a 40,000 Edge KGK Compliant Knowledge Graph Linking the Microbiome and Host Health
+      \\ for the NCATS Biomedical Data Translator (MicrobiomeKG)
+  \begin{itemize}
+  \item Data Mined Excel Spreadsheets from Supplementary Materials of Academic Papers
+      \\ to Build the Graph
+  \end{itemize}
+\item Presented across Institutional and National Settings to Collect Feedback from Subject-Matter
+      \\ Experts to Drive Development
+\item Collaborated in a +200 Member Consortium
+\end{itemize}
+}
+% ### WEEST ###
+\cventry
+{Jan 2024 - Jun 2024}
+{Student Researcher (PHOS and CRIAS projects)}
+{CalPoly Water-Energy Sustainability Training Team (WESTT)}
+{San Luis Obispo, CA}
+{}
+{%
+\begin{itemize}
+\item Scaled and Maintained Algal Cultures for Wastewater Treatment and
+      \\ Biofertilizer in Lab and Field Settings
+\item Monitored Culture Growth and Contamination through Microscopy, OD Measurements,
+      \\ and Mass Assays
+\end{itemize}
+}
+% ### FOOD SERVICE ###
+\cventry
+{Jan 2024 - Jun 2024}
+{Food Service Worker}
+{Compass Group USA}
+{San Luis Obispo, CA}
+{}
+{%
+\begin{itemize}
+\item Communicated with Team Members using Intermediate Spanish
+\item Occasionally Repaired Dishwashing and Kitchen Equipment
+\end{itemize}
+}
+% ### GPS ###
+\cventry
+{Aug 2021 - Sep 2023}
+{Customer Fulfillment and Logistics}
+{General Polymer Solutions (GPS Polymers) LLC}
+{Upland, CA}
+{}
+{%
+\begin{itemize}
+\item Streamlined Inventory Management with Improved Excel Formulation
+\item Coordinated Pickups with UPS, FedEx, and Other Couriers
+\end{itemize}
+}
+% ### REFFING ###
+\cventry
+{Jun 2021 - Sep 2023}
+{US Soccer Grassroots Referee (Grade 8)}
+{US Soccer Federation}
+{Upland, CA}
+{}
+{%
+\begin{itemize}
+\item Worked with Associations and as a Private Contractor to Secure Work
+\item Dealt with Difficult Parents During High Stakes Games
+\end{itemize}
+}
+% ### MATH TUTOR ###
+\cventry
+{Jun 2023 - Sep 2023}
+{Math Tutor}
+{Self Employed}
+{Upland, CA}
+{}
+{%
+\begin{itemize}
+\item Worked with Clients (Grades 3-5) to Improve Subject Performance
+  \begin{itemize}
+  \item Turned Two C Students into A Students
+  \end{itemize}
+\end{itemize}
+}
+% ### FIDGET SPINNERS ###
+\cventry
+{Dec 2015 - Sep 2016}
+{Founder, President, and CEO}
+{Kessen Star Spinners}
+{Upland, CA}
+{}
+{%
+\begin{itemize}
+\item Founded and Ran a Fidget Spinner Company with 4 Employees
+\item Used FreeCAD to Customized Fidget Spinner Designs to Customer Specifications and for our 3D Printers
+\item Coordinated with Various Organizations to Sell Our Product
+  \begin{itemize}
+  \item Made Over \$2,000.00 in Revenue in One Night at a Local Little League Opening Day
+  \end{itemize}
+\end{itemize}
+}
+% --- PUBLICATIONS ---
+\section{Publications}
+% ### SEE .bib FILE ###
+\makeatletter
+\renewenvironment{thebibliography}[1]
+{%
+% No heading, just start the list:
+\list{\@biblabel{\@arabic\c@enumiv}}{%
+\settowidth\labelwidth{\@biblabel{\@arabic\c@enumiv}}%
+\leftmargin\labelwidth
+\advance\leftmargin\labelsep
+\usecounter{enumiv}%
+\let\p@enumiv\@empty
+\renewcommand\theenumiv{\@arabic\c@enumiv}%
+}%
+\sloppy\clubpenalty4000\widowpenalty4000
+\sfcode`\.=\@m
+}
+{%
+\def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}%
+\endlist
+}
+\makeatother
+\nocite{goetz2025mbkg, translator2025, qin2024multiomics}
+\bibliographystyle{unsrt}
+\bibliography{skye-lane-goetz-cv-jan-2026}
+% --- EDUCATION ---
+\section{Education}
+% ### CALPOLY SLO ###
+\cventry
+{Feb 2024 - Present}
+{BS Biochemistry}
+{California State Polytechnic University (Cal Poly)}
+{San Luis Obispo, CA}
+{}
+{%
+\begin{itemize}
+\item GPA: 3.626/4.000
+\item Graduation Date: Spring Quarter 2026
+\item Consulted on Machine Learning Senior Projects for Computer Engineering Students
+  \begin{itemize}
+  \item Improved AUC by 0.15
+  \end{itemize}
+\item Developed and Trialed Computational and Machine Learning Techniques for Biochemical Assays in Lab
+  \begin{itemize}
+  \item Improved R$^2$ Coefficients by 0.08 on Average
+  \end{itemize}
+\item Trialed Modifications to Organic Syntheses in Lab
+  \begin{itemize}
+  \item Speed Up Cited Procedure by 30 Minutes
+  \end{itemize}
+\item Consulted on Multinomial Classification Efforts in the Bioinformatics Lab
+\end{itemize}
+}
+\cventry
+{Sep 2023 - Feb 2024}
+{BS Agribusiness}
+{California State Polytechnic University, San Luis Obispo}
+{San Luis Obispo, CA}
+{}
+{%
+\begin{itemize}
+\item Completed 5 Months of Coursework Before Transitioning to Biochemistry
+\item Wrote a Comprehensive Report on the Economics of the California Almond Industry for the 2022 Growing Season
+\end{itemize}
+}
+% ### UPLAND HS ###
+\cventry
+{Aug 2019 - Jun 2023}
+{High School Diploma}
+{Upland High School}
+{Upland, CA}
+{}
+{%
+\begin{itemize}
+\item GPA: 4.000/4.000
+\item High School Soccer 4 Years
+  \begin{itemize}
+  \item Team Captain 3 Years
+  \item Varsity Coaches Award
+  \item Varsity Most Improved Player Award
+  \item 2021-2022 Golden Boot
+  \end{itemize}
+\item Designed (with CAD) and 3D Printed Ceramic Stamps for the Ceramics Studio
+\item Wrote AP Physics Notes Programs for Class TI84s
+\end{itemize}
+}
+% --- TALKS + PRESENTATIONS ---
+\section{Talks and Presentations}
+% ### CONFERENCE + EXTERNAL ###
+\subsection*{Conference and External}
+\begin{itemize}[leftmargin=*]
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{This Time on MultiomicsKG: Edge Scoring!} --
+NCATS Biomedical Data Translator Fall Relay (Bethesda, MD) & Sep 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{Gut Microbiome Signatures of Vegan, Vegetarian, and Omnivore Diets across 21,561 Individuals} --
+ISB Micro Journal Club (Seattle, WA) & Aug 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{Updates on the New MultiomicsKG} --
+NCATS Biomedical Data Translator Summer Relay (Bethesda, MD) & Jun 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{MicrobiomeKG: Extracting Relationships between the Microbiome and Host Health from Published Supplementary Materials} --
+Cal Poly Bailey College Research Symposium (San Luis Obispo, CA) & May 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{MultiomicsKG: Extracting Knowledge Assertions from Tabular Data in Supplementary Materials} --
+NCATS Biomedical Data Translator Spring Relay (Bethesda, MD) & Feb 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{MicrobiomeKG (v0.1): A Microbiome-Centric Knowledge Graph Facilitating Human Reasoning Across the Biomedical Domain} --
+ISB Summer Research Poster Session (Seattle, WA) & Jun 2024 \\
+\end{tabularx}
+\end{itemize}
+% ### LAB + GROUP ###
+\subsection*{Group and Lab}
+\begin{itemize}[leftmargin=*]
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{This Time on MultiomicsKG: Edge Scores and Agentic Configurators} --
+ISB Hood Lab Meeting (Seattle, WA) & Aug 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{MicrobiomeKG: Connecting the Microbiome and Host Health through Knowledge Graphs} --
+ISB Thorsson-Shmulevich Lab Meeting (Seattle, WA) & Jul 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{MicrobiomeKG: Connecting the Microbiome and Host Health through Knowledge Graphs} --
+ISB Gibbons Lab Meeting (Seattle, WA) & Jul 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{Tablassert(3.0): Transforming Tabular Data Into Knowledge Graphs} --
+ISB Hood Lab Meeting (Seattle, WA) & Feb 2025 \\
+\end{tabularx}
+\item \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+\textbf{MicrobiomeKG: Story of My Internship at ISB} --
+ISB Hood-Price Lab Meeting (Seattle, WA) & Aug 2024 \\
+\end{tabularx}
+\end{itemize}
+% --- PROJECTS ---
+\newpage
+\section{Projects}
+% ### TABLASSERT ###
+\cventry
+{}  % LOCATION
+{Table Mining Declarative Knowledge Graph Builder}  % DESC
+{\href{https://github.com/SkyeAv/Tablassert}{Tablassert}}  % TITLE
+{NCATS Translator (at ISB)}  % LOCATION
+{}
+{}  
+% ### MBKG ###
+\cventry
+{}  % LOCATION
+{A Knowledge Graph Connecting the Microbiome and Host Health}  % DESC
+{\href{https://www.frontiersin.org/journals/systems-biology/articles/10.3389/fsysb.2025.1544432/full}{MicrobiomeKG}}  % TITLE
+{NCATS Translator (at ISB)}  % LOCATION
+{}
+{}
+% ### TABLE CONFIG AGENT ###
+\cventry
+{}  % LOCATION
+{Agentic Natural Language Configuration for Tablassert-Based Knowledge Graphs}  % DESC
+{\href{https://github.com/SkyeAv/TableConfigAgent}{Table Config Agent}}  % TITLE
+{NCATS Translator (at ISB)}  % LOCATION
+{}
+{}
+% ### CTML ### [[ UPDATE EVENTAULLY ]]
+\cventry
+{}  % LOCATION
+{Binomical Classification for the AACT Clinical Trials Database}  % DESC
+{\href{https://github.com/SkyeAv/CTClassifier}{Clinical Trials Classifier}}  % TITLE
+{NCATS Translator (at ISB)}  % LOCATION
+{}
+{}
+% ### MOKG ###
+\cventry
+{}  % LOCATION
+{A Superset of MicrobiomeKG Connecting Multiomic Factors with Host Health}  % DESC
+{\href{https://github.com/glusman-team/MOKGConfiguration}{MultiomicsKG}}  % TITLE
+{NCATS Translator (at ISB)}  % LOCATION
+{}
+{}
+% --- END DOCUMENT ---
+\end{document}
