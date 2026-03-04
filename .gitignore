@@ -1,3 +1,8 @@
 *.bbl
 *.gz
 *.xmpi
+*.logs/
+*.opencode/
+*.sisyphus/
+*plans/
+*.log
