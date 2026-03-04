@@ -18,13 +18,15 @@
 \fi
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage[english]{babel}
-\usepackage[scale=0.9]{geometry}
+\usepackage[scale=0.85]{geometry}
 \usepackage{enumitem}
-\setlist[itemize]{noitemsep, topsep=0pt}
+\setlist[itemize]{itemsep=1pt, topsep=5pt, font=\normalsize}
 \usepackage{array}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage{fontawesome5}
+\newcommand{\skyespace}{\vspace{8pt}}
 % --- MICRO TYPOGRAPHY ---
 \usepackage{microtype}
 \AtBeginDocument{%
@@ -32,6 +34,9 @@
 \tolerance=2000
 \pretolerance=1000
 }
+% --- FIX LINK COLORS ---
+\definecolor{linkblue}{RGB}{0, 50, 140}
+\newcommand{\colorhref}[2]{\href{#1}{\textcolor{linkblue}{#2}}}
 % --- BEGIN DOCUMENT ---
 \begin{document}
 % --- PERSONAL DATA ---
@@ -44,7 +49,7 @@
 \makeatother
 % --- CUSTOM HEADER --- CONFUSING LLM CODE, DON'T TOUCH
 \makeatletter
-\renewcommand*{\namefont}{\fontsize{34}{38}\bfseries\sffamily}
+\renewcommand*{\namefont}{\fontsize{28}{32}\bfseries\sffamily}
 \renewcommand*{\titlefont}{\large\sffamily\mdseries}
 \renewcommand*{\makecvtitle}{%
 \par\noindent
@@ -54,87 +59,84 @@
 }%
 \hfill
 \parbox[b]{0.38\textwidth}{\raggedleft
-\ifthenelse{\isundefined{\@mobile}}{}{{\phonesymbol}\enspace\href{tel:+19094979907}{+1 (909) 497-9907}\\}
-\ifthenelse{\isundefined{\@mobile}}{\ifthenelse{\isundefined{\@phone}}{}{{\phonesymbol}\enspace\href{tel:+19094979907}{+1 (909) 497-9907}\\}}{}
-Seattle, WA\\
-{\emailsymbol}\enspace\href{mailto:skye.lane.goetz@gmail.com}{skye.lane.goetz@gmail.com}\\
+\ifthenelse{\isundefined{\@mobile}}{}{{\phonesymbol}\enspace\colorhref{tel:+19094979907}{+1 (909) 497-9907}\\}
+\ifthenelse{\isundefined{\@mobile}}{\ifthenelse{\isundefined{\@phone}}{}{{\phonesymbol}\enspace\colorhref{tel:+19094979907}{+1 (909) 497-9907}\\}}{}
+\faMapMarker\enspace Seattle, WA\\
+{\emailsymbol}\enspace\colorhref{mailto:skye.lane.goetz@gmail.com}{skye.lane.goetz@gmail.com}\\
 \faLinkedin\enspace
-\href{https://www.linkedin.com/in/skye-lane-goetz}{skye-lane-goetz}\\
+\colorhref{https://www.linkedin.com/in/skye-lane-goetz}{skye-lane-goetz}\\
 \faGithub\enspace
-\href{https://github.com/SkyeAv}{SkyeAv}%
+\colorhref{https://github.com/SkyeAv}{SkyeAv}%
 }%
 \par\vspace{1.5ex}
 }
-\makeatother
 % --- MAKE TITLE ---
 \makecvtitle
 % --- SKILLS ---
 \section{Skills}
 \cvitem{Languages}{Python, Elixir, SQL, Shell, LaTeX, Nim, Julia}
-\cvitem{AI/ML}{PyTorch, LightGBM, Scikit-learn, LangGraph, MCP, Transformers (HuggingFace), PEFT, Diffusers, Ollama, LlamaCPP, WhisperCPP, Snorkel}
+\cvitem{AI/ML}{PyTorch, LightGBM, Scikit-learn, LangGraph, MCP, Transformers (HuggingFace), PEFT, Diffusers, Ollama, Snorkel}
 \cvitem{Data \& Storage}{Polars, DuckDB, PostgreSQL, SQLite, ChromaDB, Spark, NumPy}
-\cvitem{Knowledge Graphs}{Biolink, KGX, LinkML, Ontology Mapping, Graph Centrality}
-\cvitem{NLP}{spaCy, NLTK, Sentence Transformers, BERT, TF-IDF, Text Classification}
-\cvitem{DevOps/Infrastructure}{Nix/NixOS, Docker, FastAPI, Kubernetes, Mix (Elixir), Pytest}
+\cvitem{Knowledge Graphs}{Biolink, KGX, LinkML, Ontology Mapping, Neo4j, NetworkX, Graph Centrality}
+\cvitem{NLP}{spaCy, NLTK, Sentence Transformers, BERT, TF-IDF, Text Classification, PCA}
+\cvitem{DevOps/Infrastructure}{Nix/NixOS, Docker, FastAPI, Kubernetes, GitHub Packages/Actions}
 \cvitem{Domain}{Multiomic Data, Shotgun Metagenomics, Polygenic Risk Scores, Organic Chemistry, DFT}
 % --- WORK EXPERIENCE ---
 \section{Work Experience}
+
 % ### ISB ###
+\skyespace
 \cventry
 {Nov 2024 - Present}
-{Research Associate (Data Science) [Hood Lab]}
+{Research Associate (Data Science), Hood Lab}
 {Institute for Systems Biology (ISB)}
 {Seattle, WA}
 {}
 {%
 	\begin{itemize}
-		\item Engineered MultiomicsKG, a 1M+ edge (QC in progress) multiomics knowledge graph integrating genomics,
-		      proteomics, and microbiome data across 52+ papers; a superset of published MicrobiomeKG
-			      [\href{https://github.com/SkyeAv/Tablassert}{Tablassert}]
-		\item Refactored knowledge graph extraction from 800GB SQLite to 300GB DuckDB OLAP, reducing query time
-		      from \textasciitilde 10 minutes to 4--11 seconds (\textasciitilde 100--1000x) using Polars lazy frames,
-		      Pydantic schemas, and compact CURIE encoding
-		\item Built QualifiersMCP [\href{https://github.com/SkyeAv/QualifiersMCP}{GitHub}], an MCP server for authoring
-		      and validating Tablassert table configs against Biolink qualifier ontology; deployed via Nix flake
-		\item Co-mentored a master's student on a clinical trial classifier; expanded the pipeline with BERT sentence
-		      transformers, incremental PCA, and LightGBM, improving AUC from 0.63 to 0.90 across 3 datasets
-		\item Developed a LangGraph-based AI agent for automated knowledge graph configuration from natural language,
-		      using a LoRA/P-tuning fine-tuned LLM via HuggingFace PEFT
-		\item Developed consortium MCP tooling and a FastAPI + Neo4j query interface for LLM-accessible MultiomicsKG
-		      subgraph retrieval
-		\item Published MicrobiomeKG [\href{https://github.com/SkyeAv/Tablassert}{paper}], a 115k-edge microbiome
-		      knowledge graph spanning 40 curated papers with ResNet-based edge scoring
+		\item Engineered MultiomicsKG, a 1M+ edge (QC in progress) multiomics knowledge graph integrating genomics, proteomics, and microbiome data across 52+ papers for the NCATS Biomedical Data Translator; a superset of published MicrobiomeKG 
+		\item Refactored knowledge graph extraction from 800GB SQLite to 300GB DuckDB OLAP, reducing query time from \textasciitilde 10 minutes to 4--11 seconds (\textasciitilde 100--1000x) using Polars lazy frames, Pydantic schemas, and compact CURIE encoding (\colorhref{https://skyeav.github.io/Tablassert/}{GitHub})
+		\item Built \colorhref{https://github.com/SkyeAv/QualifiersMCP}{QualifiersMCP}, an MCP server for authoring and validating Tablassert table configs against Biolink qualifier ontology; deployed via Nix flake
+		\item Co-mentored a master's student on a \colorhref{https://github.com/SkyeAv/CTClassifier}{clinical trial classifier}; expanded the pipeline with BERT sentence transformers, incremental PCA, and LightGBM, improving AUC from 0.63 to 0.90 across 3 datasets
+		\item Developed a \colorhref{https://github.com/SkyeAv/TableConfigAgent}{LangChain-based AI agent} for automated knowledge graph configuration from natural language, using a LoRA/P-tuning fine-tuned LLM via HuggingFace PEFT
+		\item Developed consortium MCP tooling and a FastAPI + Neo4j query interface for LLM-accessible MultiomicsKG subgraph retrieval
+		\item Published \colorhref{https://www.frontiersin.org/journals/systems-biology/articles/10.3389/fsysb.2025.1544432/full}{MicrobiomeKG}, a 115k-edge microbiome knowledge graph spanning 40 curated papers with ResNet-based edge scoring
 	\end{itemize}
 }
+
+% ### HACKATHON ###
+\skyespace
 \cventry
-{2025}
-{AI/Tech Lead -- Parker, OpenAI-Sponsored Cal Poly Hackathon [\href{https://github.com/POLY-PROMPT-TEAM-7}{GitHub}] (\textasciitilde30\% acceptance)}
-{Cal Poly}
+{Feb 2025 -- Feb 2025}
+{AI/Tech Lead -- Parker: The KG Study Tool}
+{OpenAI-Sponsored Poly Prompt Hackathon (Cal Poly)}
 {San Luis Obispo, CA}
 {}
 {%
 	\begin{itemize}
-		\item Led a LangGraph pipeline for course-material knowledge graph generation using Canvas API ingestion,
-		      LinkML ontology modeling, DuckDB storage, and LLM entity extraction from PDFs, PPTs, and Excel files
+		\item Led a \colorhref{https://github.com/POLY-PROMPT-TEAM-7/backend}{LangGraph pipeline} for course-material knowledge graph generation using Canvas API ingestion, \colorhref{https://github.com/POLY-PROMPT-TEAM-7/StudyOntology}{LinkML ontology modeling}, DuckDB storage, and LLM entity extraction from PDFs, PPTs, and Excel files
 	\end{itemize}
 }
+
 % ### HAYNES LAB ###
+\skyespace
 \cventry
-{Sep 2024 - Nov 2024}
+{Sep 2024 -- Nov 2024}
 {Student Researcher (Computational Subgroup)}
 {Zigler-Haynes Lab (CalPoly)}
 {San Luis Obispo, CA}
 {}
 {%
 	\begin{itemize}
-		\item Ran TD-DFT calculations on thiocarboxylate derivatives and built a Julia ORCA wrapper that parsed
-		      outputs 3x faster than prior lab scripts
+		\item Ran TD-DFT calculations on thiocarboxylate derivatives and built a \colorhref{https://github.com/SkyeAv/OrcaFunctionalHub}{Julia ORCA wrapper} that parsed outputs 3x faster than prior lab scripts
 	\end{itemize}
 }
+
 % ### ISB AGAIN ###
+\skyespace
 \cventry
-{Aug 2024 - Sep 2024}
-{Data Science Intern [Hood Lab]}
+{Aug 2024 -- Sep 2024}
+{Data Science Intern, Hood Lab}
 {Institute for Systems Biology (ISB)}
 {Seattle, WA}
 {}
@@ -143,101 +145,18 @@ Seattle, WA\\
 		\item Developed the Tablassert framework and co-authored the MicrobiomeKG preprint
 	\end{itemize}
 }
+
+% ### ISB REU ###
+\skyespace
 \cventry
-{Jun 2024 - Aug 2024}
-{Summer Intern/Trainee (NSF REU) [Hood-Price Lab]}
+{Jun 2024 -- Aug 2024}
+{Summer Intern/Trainee (NSF REU), Hood-Price Lab}
 {Institute for Systems Biology (ISB)}
 {Seattle, WA}
 {}
 {%
 	\begin{itemize}
-		\item Built a 40k-edge MicrobiomeKG prototype and presented it to the 200+ member CATRAX consortium
-	\end{itemize}
-}
-% ### WEEST ###
-\cventry
-{Jan 2024 - Jun 2024}
-{Student Researcher (PHOS and CRIAS projects)}
-{CalPoly Water-Energy Sustainability Training Team (WESTT)}
-{San Luis Obispo, CA}
-{}
-{%
-	\begin{itemize}
-		\item Scaled and Maintained Algal Cultures for Wastewater Treatment and
-		      \\ Biofertilizer in Lab and Field Settings
-		\item Monitored Culture Growth and Contamination through Microscopy, OD Measurements,
-		      \\ and Mass Assays
-	\end{itemize}
-}
-% ### FOOD SERVICE ###
-\cventry
-{Jan 2024 - Jun 2024}
-{Food Service Worker}
-{Compass Group USA}
-{San Luis Obispo, CA}
-{}
-{%
-	\begin{itemize}
-		\item Communicated with Team Members using Intermediate Spanish
-		\item Occasionally Repaired Dishwashing and Kitchen Equipment
-	\end{itemize}
-}
-% ### GPS ###
-\cventry
-{Aug 2021 - Sep 2023}
-{Customer Fulfillment and Logistics}
-{General Polymer Solutions (GPS Polymers) LLC}
-{Upland, CA}
-{}
-{%
-	\begin{itemize}
-		\item Streamlined Inventory Management with Improved Excel Formulation
-		\item Coordinated Pickups with UPS, FedEx, and Other Couriers
-	\end{itemize}
-}
-% ### REFFING ###
-\cventry
-{Jun 2021 - Sep 2023}
-{US Soccer Grassroots Referee (Grade 8)}
-{US Soccer Federation}
-{Upland, CA}
-{}
-{%
-	\begin{itemize}
-		\item Worked with Associations and as a Private Contractor to Secure Work
-		\item Dealt with Difficult Parents During High Stakes Games
-	\end{itemize}
-}
-% ### MATH TUTOR ###
-\cventry
-{Jun 2023 - Sep 2023}
-{Math Tutor}
-{Self Employed}
-{Upland, CA}
-{}
-{%
-	\begin{itemize}
-		\item Worked with Clients (Grades 3-5) to Improve Subject Performance
-		      \begin{itemize}
-			      \item Turned Two C Students into A Students
-		      \end{itemize}
-	\end{itemize}
-}
-% ### FIDGET SPINNERS ###
-\cventry
-{Dec 2015 - Sep 2016}
-{Founder, President, and CEO}
-{Kessen Star Spinners}
-{Upland, CA}
-{}
-{%
-	\begin{itemize}
-		\item Founded and Ran a Fidget Spinner Company with 4 Employees
-		\item Used FreeCAD to Customized Fidget Spinner Designs to Customer Specifications and for our 3D Printers
-		\item Coordinated with Various Organizations to Sell Our Product
-		      \begin{itemize}
-			      \item Made Over \$2,000.00 in Revenue in One Night at a Local Little League Opening Day
-		      \end{itemize}
+		\item Built a 40k-edge MicrobiomeKG prototype and presented it to the 200+ member NCATS Translator consortium
 	\end{itemize}
 }
 % --- PUBLICATIONS ---
@@ -270,13 +189,13 @@ Seattle, WA\\
 \section{Education}
 % ### CALPOLY SLO ###
 \cventry
-{Feb 2024 -- June 2026 (expected)}
+{Feb 2024 -- June 2026 (Confirmed)}
 {B.S. Biochemistry}
 {California State Polytechnic University, San Luis Obispo}
 {San Luis Obispo, CA}
 {}
 {%
-	\begin{itemize}
+	\begin{itemize}[noitemsep, topsep=5pt, font=\normalsize]
 		\item GPA: 3.626/4.000
 		\item Previously: B.S. Agribusiness (Sep 2023 -- Feb 2024)
 		\item Applied ML consulting on senior capstone projects (+0.15 AUC improvement)
