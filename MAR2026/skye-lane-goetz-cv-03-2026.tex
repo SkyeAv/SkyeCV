@@ -1,0 +1,69 @@
+\documentclass[11pt]{moderncv}
+\moderncvcolor{black}
+\moderncvstyle{banking}
+\renewcommand{\familydefault}{\sfdefault}
+% --- FIX HEADER COLORS ---
+\usepackage{xcolor}
+\colorlet{headtext}{white}
+\colorlet{namecolor}{white} 
+% --- INCLUDE XMPDATA ---
+\RequirePackage[a-1b]{pdfx}
+% --- PACKAGES ---
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setsansfont{Arial}[Scale=MatchLowercase]
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[english]{babel}
+\usepackage[scale=0.9]{geometry}
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+\usepackage{array}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\usepackage{tabularx}
+\usepackage{hyperref}
+% --- MICRO TYPOGRAPHY ---
+\usepackage{microtype}
+\AtBeginDocument{%
+\emergencystretch=3em
+\tolerance=2000
+\pretolerance=1000
+}
+% --- BEGIN DOCUMENT ---
+\begin{document}
+% --- PERSONAL DATA ---
+\name{Skye~Lane}{Goetz}
+\title{Biomedical Research Scientist (AI \& Data)}
+% --- NO PHOTO ---
+\makeatletter
+\newlength\@photoframewidth
+\setlength\@photoframewidth{0pt}
+\makeatother
+% --- CUSTOM HEADER --- CONFUSING LLM CODE, DON'T TOUCH
+\makeatletter
+\renewcommand*{\namefont}{\fontsize{34}{38}\bfseries\sffamily}
+\renewcommand*{\titlefont}{\large\sffamily\mdseries}
+\renewcommand*{\makecvtitle}{%
+\par\noindent
+\parbox[b]{0.6\textwidth}{%
+{\namefont \@firstname\ \@lastname}\\[0.4ex]
+{\titlefont \@title}%
+}%
+\hfill
+\parbox[b]{0.38\textwidth}{\raggedleft
+\ifthenelse{\isundefined{\@mobile}}{}{{\phonesymbol}\enspace\href{tel:+19094979907}{+1 (909) 497-9907}\\}
+\ifthenelse{\isundefined{\@mobile}}{\ifthenelse{\isundefined{\@phone}}{}{{\phonesymbol}\enspace\href{tel:+19094979907}{+1 (909) 497-9907}\\}}{}
+{\emailsymbol}\enspace\href{mailto:skye.lane.goetz@gmail.com}{skye.lane.goetz@gmail.com}\\
+\faLinkedin\enspace
+\href{https://www.linkedin.com/in/skye-lane-goetz}{skye-lane-goetz}\\
+\faGithub\enspace
+\href{https://github.com/SkyeAv}{SkyeAv}\\
+\faOrcid\enspace
+\href{https://orcid.org/0009-0007-8373-2352}{0009-0007-8373-2352}%
+}%
+\par\vspace{1.5ex}
+}
+\makeatother
+% --- MAKE TITLE ---
+\makecvtitle
+% --- END DOCUMENT ---
+\end{document}
