@@ -41,7 +41,7 @@
 \begin{document}
 % --- PERSONAL DATA ---
 \name{Skye~Lane}{Goetz}
-\title{Applied AI/ML Engineer | Biomedical Data Scientist}
+\title{Applied AI/ML Engineer || Biomedical Data Scientist}
 % --- NO PHOTO ---
 \makeatletter
 \newlength\@photoframewidth
@@ -74,13 +74,13 @@
 \makecvtitle
 % --- SKILLS ---
 \section{Skills}
-\cvitem{Languages}{Python, Elixir, SQL, Shell, LaTeX, Nim, Julia}
+\cvitem{Languages}{Python, Go, TypeScript, Elixir, SQL, Shell, LaTeX}
 \cvitem{AI/ML}{PyTorch, LightGBM, Scikit-learn, LangGraph, MCP, Transformers (HuggingFace), PEFT, Diffusers, Ollama, Snorkel}
-\cvitem{Data \& Storage}{Polars, DuckDB, PostgreSQL, SQLite, ChromaDB, Spark, NumPy}
+\cvitem{Data \& Storage}{Polars, DuckDB, PostgreSQL, Redis, SQLite, ChromaDB, Spark, NumPy}
 \cvitem{Knowledge Graphs}{Biolink, KGX, LinkML, Ontology Mapping, Neo4j, NetworkX, Graph Centrality}
 \cvitem{NLP}{spaCy, NLTK, Sentence Transformers, BERT, TF-IDF, Text Classification, PCA}
-\cvitem{DevOps/Infrastructure}{Nix/NixOS, Docker, FastAPI, Kubernetes, GitHub Packages/Actions}
-\cvitem{Domain}{Multiomic Data, Shotgun Metagenomics, Polygenic Risk Scores, Organic Chemistry, DFT}
+\cvitem{DevOps/Infrastructure}{Nix/NixOS, Docker, FastAPI, Gin, Kubernetes, GitHub Packages/Actions}
+\cvitem{Domain}{Multi-Omics, Shotgun Metagenomics, Polygenic Risk Scores, Physical Chemistry, DFT}
 % --- WORK EXPERIENCE ---
 \section{Work Experience}
 
@@ -94,12 +94,11 @@
 {}
 {%
 	\begin{itemize}
-		\item Engineered MultiomicsKG, a 1M+ edge (QC in progress) multiomics knowledge graph integrating genomics, proteomics, and microbiome data across 52+ papers for the NCATS Biomedical Data Translator; a superset of published MicrobiomeKG 
-		\item Refactored knowledge graph extraction from 800GB SQLite to 300GB DuckDB OLAP, reducing query time from \textasciitilde 10 minutes to 4--11 seconds (\textasciitilde 100--1000x) using Polars lazy frames, Pydantic schemas, and compact CURIE NER (\colorhref{https://skyeav.github.io/Tablassert/}{GitHub})
-		\item Built \colorhref{https://github.com/SkyeAv/QualifiersMCP}{QualifiersMCP}, an MCP server for authoring and validating Tablassert table configs against Biolink qualifier ontology; deployed via Nix flake
+		\item Engineered MultiomicsKG, a 1M+ edge (QC in progress) multiomics knowledge graph integrating genomics, proteomics, and microbiome data across 52+ papers for the NCATS Biomedical Data Translator; a superset of published MicrobiomeKG
+		\item Refactored knowledge graph extraction from 800GB SQLite to 250GB DuckDB OLAP, reducing query time from \textasciitilde 10 minutes to 4--11 seconds (\textasciitilde 100--1000x) using Polars lazy frames, Pydantic schemas, and compact CURIE NER (\colorhref{https://skyeav.github.io/Tablassert/}{GitHub})
+		\item Built \colorhref{https://github.com/SkyeAv/datassert}{Datassert}, a Go pipeline that shards Babel biomedical exports into 16 indexed DuckDB databases, a \colorhref{https://github.com/SkyeAv/configurator-api}{Gin API} for CURIE resolution and PMC file streaming with Redis auth, and \colorhref{https://github.com/SkyeAv/Tablassist}{Tablassist}, a Python CLI/TypeScript and OpenCode plugin (51 tools) for agentic Biolink validation and config drafting
 		\item Co-mentored a master's student on a \colorhref{https://github.com/SkyeAv/CTClassifier}{clinical trial classifier}; expanded the pipeline with BERT sentence transformers, incremental PCA, Autoencoders, and LightGBM, improving AUC from 0.63 to 0.90 across 3 datasets
 		\item Developed a \colorhref{https://github.com/SkyeAv/TableConfigAgent}{LangChain-based AI agent} for automated knowledge graph configuration from natural language, using a LoRA/P-tuning fine-tuned LLM via HuggingFace PEFT
-		\item Developed consortium MCP tooling and a FastAPI + Neo4j query interface for LLM-accessible MultiomicsKG subgraph retrieval
 		\item Published \colorhref{https://www.frontiersin.org/journals/systems-biology/articles/10.3389/fsysb.2025.1544432/full}{MicrobiomeKG}, a 115k-edge microbiome knowledge graph spanning 40 curated papers with ResNet-based edge scoring
 	\end{itemize}
 }
@@ -107,7 +106,7 @@
 % ### HACKATHON ###
 \skyespace
 \cventry
-{Feb 2025 -- Feb 2025}
+{Feb 2026 -- Feb 2026}
 {AI/Tech Lead -- Parker: The KG Study Tool}
 {OpenAI-Sponsored Poly Prompt Hackathon (Cal Poly)}
 {San Luis Obispo, CA}
@@ -118,47 +117,6 @@
 	\end{itemize}
 }
 
-% ### HAYNES LAB ###
-\skyespace
-\cventry
-{Sep 2024 -- Nov 2024}
-{Student Researcher (Computational Subgroup)}
-{Zigler-Haynes Lab (CalPoly)}
-{San Luis Obispo, CA}
-{}
-{%
-	\begin{itemize}
-		\item Ran TD-DFT calculations on thiocarboxylate derivatives and built a \colorhref{https://github.com/SkyeAv/OrcaFunctionalHub}{Julia ORCA wrapper} that parsed outputs 3x faster than prior lab scripts
-	\end{itemize}
-}
-
-% ### ISB AGAIN ###
-\skyespace
-\cventry
-{Aug 2024 -- Sep 2024}
-{Data Science Intern, Hood Lab}
-{Institute for Systems Biology (ISB)}
-{Seattle, WA}
-{}
-{%
-	\begin{itemize}
-		\item Developed the Tablassert framework and co-authored the MicrobiomeKG preprint
-	\end{itemize}
-}
-
-% ### ISB REU ###
-\skyespace
-\cventry
-{Jun 2024 -- Aug 2024}
-{Summer Intern/Trainee (NSF REU), Hood-Price Lab}
-{Institute for Systems Biology (ISB)}
-{Seattle, WA}
-{}
-{%
-	\begin{itemize}
-		\item Built a 40k-edge MicrobiomeKG prototype and presented it to the 200+ member NCATS Translator consortium
-	\end{itemize}
-}
 % --- PUBLICATIONS ---
 \section{Publications}
 % ### SEE .bib FILE ###
@@ -182,7 +140,7 @@
 	\endlist
 }
 \makeatother
-\nocite{goetz2025mbkg, translator2025, qin2024multiomics}
+\nocite{goetz2025mbkg}
 \bibliographystyle{unsrt}
 \bibliography{skye-lane-goetz-resume-04-2026}
 % --- EDUCATION ---
