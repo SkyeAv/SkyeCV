@@ -1,0 +1,206 @@
+\documentclass[11pt]{moderncv}
+\moderncvcolor{black}
+\moderncvstyle{banking}
+\renewcommand{\familydefault}{\sfdefault}
+% --- FIX HEADER COLORS ---
+\usepackage{xcolor}
+\colorlet{headtext}{white}
+\colorlet{namecolor}{white} 
+% --- INCLUDE XMPDATA ---
+\RequirePackage[a-1b]{pdfx}
+% --- PACKAGES ---
+\usepackage{iftex}
+\ifPDFTeX
+\else
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setsansfont{Arial}[Scale=MatchLowercase]
+\fi
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[english]{babel}
+\usepackage[scale=0.85]{geometry}
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=1pt, topsep=5pt, font=\normalsize}
+\usepackage{array}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\newcommand{\skyespace}{\vspace{8pt}}
+% --- MICRO TYPOGRAPHY ---
+\usepackage{microtype}
+\AtBeginDocument{%
+\emergencystretch=3em
+\tolerance=2000
+\pretolerance=1000
+}
+% --- FIX LINK COLORS ---
+\definecolor{linkblue}{RGB}{0, 50, 140}
+\newcommand{\colorhref}[2]{\href{#1}{\textcolor{linkblue}{#2}}}
+% --- BEGIN DOCUMENT ---
+\begin{document}
+% --- PERSONAL DATA ---
+\name{Skye~Lane}{Goetz}
+\title{Applied AI/ML Engineer | Biomedical Data Scientist}
+% --- NO PHOTO ---
+\makeatletter
+\newlength\@photoframewidth
+\setlength\@photoframewidth{0pt}
+\makeatother
+% --- CUSTOM HEADER --- CONFUSING LLM CODE, DON'T TOUCH
+\makeatletter
+\renewcommand*{\namefont}{\fontsize{28}{32}\bfseries\sffamily}
+\renewcommand*{\titlefont}{\large\sffamily\mdseries}
+\renewcommand*{\makecvtitle}{%
+\par\noindent
+\parbox[b]{0.6\textwidth}{%
+{\namefont \@firstname\ \@lastname}\\[0.4ex]
+{\titlefont \@title}%
+}%
+\hfill
+\parbox[b]{0.38\textwidth}{\raggedleft
+\ifthenelse{\isundefined{\@mobile}}{}{{\phonesymbol}\enspace\colorhref{tel:+19094979907}{+1 (909) 497-9907}\\}
+\ifthenelse{\isundefined{\@mobile}}{\ifthenelse{\isundefined{\@phone}}{}{{\phonesymbol}\enspace\colorhref{tel:+19094979907}{+1 (909) 497-9907}\\}}{}
+\faMapMarker\enspace Seattle, WA\\
+{\emailsymbol}\enspace\colorhref{mailto:skye.lane.goetz@gmail.com}{skye.lane.goetz@gmail.com}\\
+\faLinkedin\enspace
+\colorhref{https://www.linkedin.com/in/skye-lane-goetz}{skye-lane-goetz}\\
+\faGithub\enspace
+\colorhref{https://github.com/SkyeAv}{SkyeAv}%
+}%
+\par\vspace{1.5ex}
+}
+% --- MAKE TITLE ---
+\makecvtitle
+% --- SKILLS ---
+\section{Skills}
+\cvitem{Languages}{Python, Elixir, SQL, Shell, LaTeX, Nim, Julia}
+\cvitem{AI/ML}{PyTorch, LightGBM, Scikit-learn, LangGraph, MCP, Transformers (HuggingFace), PEFT, Diffusers, Ollama, Snorkel}
+\cvitem{Data \& Storage}{Polars, DuckDB, PostgreSQL, SQLite, ChromaDB, Spark, NumPy}
+\cvitem{Knowledge Graphs}{Biolink, KGX, LinkML, Ontology Mapping, Neo4j, NetworkX, Graph Centrality}
+\cvitem{NLP}{spaCy, NLTK, Sentence Transformers, BERT, TF-IDF, Text Classification, PCA}
+\cvitem{DevOps/Infrastructure}{Nix/NixOS, Docker, FastAPI, Kubernetes, GitHub Packages/Actions}
+\cvitem{Domain}{Multiomic Data, Shotgun Metagenomics, Polygenic Risk Scores, Organic Chemistry, DFT}
+% --- WORK EXPERIENCE ---
+\section{Work Experience}
+
+% ### ISB ###
+\skyespace
+\cventry
+{Nov 2024 -- Present}
+{Research Associate (Data Science), Hood Lab}
+{Institute for Systems Biology (ISB)}
+{Seattle, WA}
+{}
+{%
+	\begin{itemize}
+		\item Engineered MultiomicsKG, a 1M+ edge (QC in progress) multiomics knowledge graph integrating genomics, proteomics, and microbiome data across 52+ papers for the NCATS Biomedical Data Translator; a superset of published MicrobiomeKG 
+		\item Refactored knowledge graph extraction from 800GB SQLite to 300GB DuckDB OLAP, reducing query time from \textasciitilde 10 minutes to 4--11 seconds (\textasciitilde 100--1000x) using Polars lazy frames, Pydantic schemas, and compact CURIE NER (\colorhref{https://skyeav.github.io/Tablassert/}{GitHub})
+		\item Built \colorhref{https://github.com/SkyeAv/QualifiersMCP}{QualifiersMCP}, an MCP server for authoring and validating Tablassert table configs against Biolink qualifier ontology; deployed via Nix flake
+		\item Co-mentored a master's student on a \colorhref{https://github.com/SkyeAv/CTClassifier}{clinical trial classifier}; expanded the pipeline with BERT sentence transformers, incremental PCA, Autoencoders, and LightGBM, improving AUC from 0.63 to 0.90 across 3 datasets
+		\item Developed a \colorhref{https://github.com/SkyeAv/TableConfigAgent}{LangChain-based AI agent} for automated knowledge graph configuration from natural language, using a LoRA/P-tuning fine-tuned LLM via HuggingFace PEFT
+		\item Developed consortium MCP tooling and a FastAPI + Neo4j query interface for LLM-accessible MultiomicsKG subgraph retrieval
+		\item Published \colorhref{https://www.frontiersin.org/journals/systems-biology/articles/10.3389/fsysb.2025.1544432/full}{MicrobiomeKG}, a 115k-edge microbiome knowledge graph spanning 40 curated papers with ResNet-based edge scoring
+	\end{itemize}
+}
+
+% ### HACKATHON ###
+\skyespace
+\cventry
+{Feb 2025 -- Feb 2025}
+{AI/Tech Lead -- Parker: The KG Study Tool}
+{OpenAI-Sponsored Poly Prompt Hackathon (Cal Poly)}
+{San Luis Obispo, CA}
+{}
+{%
+	\begin{itemize}
+		\item Led a \colorhref{https://github.com/POLY-PROMPT-TEAM-7/backend}{LangGraph pipeline} for course-material knowledge graph generation using Canvas API ingestion, \colorhref{https://github.com/POLY-PROMPT-TEAM-7/StudyOntology}{LinkML ontology modeling}, DuckDB storage, and LLM entity extraction from PDFs, PPTs, and Excel files
+	\end{itemize}
+}
+
+% ### HAYNES LAB ###
+\skyespace
+\cventry
+{Sep 2024 -- Nov 2024}
+{Student Researcher (Computational Subgroup)}
+{Zigler-Haynes Lab (CalPoly)}
+{San Luis Obispo, CA}
+{}
+{%
+	\begin{itemize}
+		\item Ran TD-DFT calculations on thiocarboxylate derivatives and built a \colorhref{https://github.com/SkyeAv/OrcaFunctionalHub}{Julia ORCA wrapper} that parsed outputs 3x faster than prior lab scripts
+	\end{itemize}
+}
+
+% ### ISB AGAIN ###
+\skyespace
+\cventry
+{Aug 2024 -- Sep 2024}
+{Data Science Intern, Hood Lab}
+{Institute for Systems Biology (ISB)}
+{Seattle, WA}
+{}
+{%
+	\begin{itemize}
+		\item Developed the Tablassert framework and co-authored the MicrobiomeKG preprint
+	\end{itemize}
+}
+
+% ### ISB REU ###
+\skyespace
+\cventry
+{Jun 2024 -- Aug 2024}
+{Summer Intern/Trainee (NSF REU), Hood-Price Lab}
+{Institute for Systems Biology (ISB)}
+{Seattle, WA}
+{}
+{%
+	\begin{itemize}
+		\item Built a 40k-edge MicrobiomeKG prototype and presented it to the 200+ member NCATS Translator consortium
+	\end{itemize}
+}
+% --- PUBLICATIONS ---
+\section{Publications}
+% ### SEE .bib FILE ###
+\makeatletter
+\renewenvironment{thebibliography}[1]
+{%
+	% No heading, just start the list:
+	\list{\@biblabel{\@arabic\c@enumiv}}{%
+		\settowidth\labelwidth{\@biblabel{\@arabic\c@enumiv}}%
+		\leftmargin\labelwidth
+		\advance\leftmargin\labelsep
+		\usecounter{enumiv}%
+		\let\p@enumiv\@empty
+		\renewcommand\theenumiv{\@arabic\c@enumiv}%
+	}%
+	\sloppy\clubpenalty4000\widowpenalty4000
+	\sfcode`\.=\@m
+}
+{%
+	\def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}%
+	\endlist
+}
+\makeatother
+\nocite{goetz2025mbkg, translator2025, qin2024multiomics}
+\bibliographystyle{unsrt}
+\bibliography{skye-lane-goetz-resume-04-2026}
+% --- EDUCATION ---
+\section{Education}
+% ### CALPOLY SLO ###
+\cventry
+{Feb 2024 -- Jun 2026 (Confirmed)}
+{B.S. Biochemistry}
+{California State Polytechnic University, San Luis Obispo}
+{San Luis Obispo, CA}
+{}
+{%
+	\begin{itemize}[noitemsep, topsep=5pt, font=\normalsize]
+		\item GPA: 3.626/4.000
+		\item Previously: B.S. Agribusiness (Sep 2023 -- Feb 2024)
+		\item Applied ML consulting on senior capstone projects (+0.15 AUC improvement)
+		\item Developed ML pipeline for biochemical assay prediction (+0.08 R$^2$)
+	\end{itemize}
+}
+% --- END DOCUMENT ---
+\end{document}
