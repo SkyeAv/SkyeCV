@@ -5,7 +5,7 @@
 % --- FIX HEADER COLORS ---
 \usepackage{xcolor}
 \colorlet{headtext}{white}
-\colorlet{namecolor}{white} 
+\colorlet{namecolor}{white}
 % --- INCLUDE XMPDATA ---
 \RequirePackage[a-1b]{pdfx}
 % --- PACKAGES ---
@@ -72,15 +72,6 @@
 }
 % --- MAKE TITLE ---
 \makecvtitle
-% --- SKILLS ---
-\section{Skills}
-\cvitem{Languages}{Python, Go, TypeScript, Elixir, SQL, Shell, LaTeX}
-\cvitem{AI/ML}{PyTorch, LightGBM, Scikit-learn, LangGraph, MCP, Transformers (HuggingFace), PEFT, Diffusers, Ollama, Snorkel}
-\cvitem{Data \& Storage}{Polars, DuckDB, PostgreSQL, Redis, SQLite, ChromaDB, Spark, NumPy}
-\cvitem{Knowledge Graphs}{Biolink, KGX, LinkML, Ontology Mapping, Neo4j, NetworkX, Graph Centrality}
-\cvitem{NLP}{spaCy, NLTK, Sentence Transformers, BERT, TF-IDF, Text Classification, PCA}
-\cvitem{DevOps/Infrastructure}{Nix/NixOS, Docker, FastAPI, Gin, Kubernetes, GitHub Packages/Actions}
-\cvitem{Domain}{Multi-Omics, Shotgun Metagenomics, Polygenic Risk Scores, Physical Chemistry, DFT}
 % --- WORK EXPERIENCE ---
 \section{Work Experience}
 
@@ -116,7 +107,15 @@
 		\item Led a \colorhref{https://github.com/POLY-PROMPT-TEAM-7/backend}{LangGraph pipeline} for course-material knowledge graph generation using Canvas API ingestion, \colorhref{https://github.com/POLY-PROMPT-TEAM-7/StudyOntology}{LinkML ontology modeling}, DuckDB storage, and LLM entity extraction from PDFs, PPTs, and Excel files
 	\end{itemize}
 }
-
+% --- SKILLS ---
+\section{Skills}
+\cvitem{Languages}{Python, Go, Elixir, TypeScript, SQL, Shell, LaTeX}
+\cvitem{AI/ML}{PyTorch, LightGBM, Scikit-learn, LangGraph, MCP, Transformers, PEFT, Diffusers, Ollama, Snorkel}
+\cvitem{Data \& Storage}{Polars, DuckDB, PostgreSQL, Redis, SQLite, ChromaDB, NumPy}
+\cvitem{Knowledge Graphs}{Biolink, KGX, LinkML, Ontology Mapping, Neo4j, NetworkX, Centrality Alogrithms}
+\cvitem{NLP}{spaCy, Autoencoders, Sentence Transformers, BERT, Text Classification, PCA, KernelPCA}
+\cvitem{DevOps/Infrastructure}{Nix/NixOS, Docker, QEMU/KVM, FastAPI, Gin, GitHub Packages/Actions}
+\cvitem{Domain}{Multi-Omics, Clinicl Trials, Polygenic Risk Scores, Quantum Chemistry, TD-DFT}
 % --- PUBLICATIONS ---
 \section{Publications}
 % ### SEE .bib FILE ###
@@ -140,7 +139,7 @@
 	\endlist
 }
 \makeatother
-\nocite{goetz2025mbkg}
+\nocite{goetz2025mbkg, translator2025}
 \bibliographystyle{unsrt}
 \bibliography{skye-lane-goetz-resume-04-2026}
 % --- EDUCATION ---
@@ -154,8 +153,6 @@
 {}
 {%
 	\begin{itemize}[noitemsep, topsep=5pt, font=\normalsize]
-		\item GPA: 3.626/4.000
-		\item Previously: B.S. Agribusiness (Sep 2023 -- Feb 2024)
 		\item Applied ML consulting on senior capstone projects (+0.15 AUC improvement)
 		\item Developed ML pipeline for biochemical assay prediction (+0.08 R$^2$)
 	\end{itemize}
