@@ -18,15 +18,17 @@
 \fi
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage[english]{babel}
-\usepackage[scale=0.85]{geometry}
+\usepackage[scale=0.86]{geometry}
 \usepackage{enumitem}
-\setlist[itemize]{itemsep=1pt, topsep=5pt, font=\normalsize}
+\setlist[itemize]{itemsep=0pt, topsep=4pt, parsep=0pt, font=\normalsize}
 \usepackage{array}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \usepackage{tabularx}
 \usepackage{hyperref}
 \usepackage{fontawesome5}
 \newcommand{\skyespace}{\vspace{8pt}}
+\usepackage{unicode-math}
+\setmathfont{Fira Math}[Scale=MatchLowercase]
 % --- MICRO TYPOGRAPHY ---
 \usepackage{microtype}
 \AtBeginDocument{%
@@ -85,12 +87,12 @@
 {}
 {%
 	\begin{itemize}
-		\item Engineered MultiomicsKG, a 1M+ edge (QC in progress) multiomics knowledge graph integrating genomics, proteomics, and microbiome data across 52+ papers for the NCATS Biomedical Data Translator; a superset of published MicrobiomeKG
-		\item Refactored knowledge graph extraction from 800GB SQLite to 250GB DuckDB OLAP while reducing query time from \textasciitilde 10 minutes to 4-11 seconds (\textasciitilde 100-1000x) using Polars lazy frames, Pydantic schemas, and compact CURIE NER (\colorhref{https://skyeav.github.io/Tablassert/}{GitHub})
-		\item Built \colorhref{https://github.com/SkyeAv/datassert}{Datassert}, a Go pipeline that shards BABEL biomedical exports into 12 indexed DuckDB databases, a \colorhref{https://github.com/SkyeAv/configurator-api}{Gin API} for CURIE resolution and PMC file streaming with Redis auth, and \colorhref{https://github.com/SkyeAv/Tablassist}{Tablassist}, a Python CLI/TypeScript OpenCode plugin (51 tools) for agentic Biolink validation and config drafting
-		\item Co-mentored a master's student on a \colorhref{https://github.com/SkyeAv/CTClassifier}{clinical trial classifier}; expanded the pipeline with BERT sentence transformers, incremental PCA, Autoencoders, and LightGBM, improving AUC from 0.63 to 0.90 across 3 datasets
-		\item Developed a \colorhref{https://github.com/SkyeAv/TableConfigAgent}{LangChain-based AI agent} for automated knowledge graph configuration from natural language, using a LoRA/P-tuning fine-tuned LLM via HuggingFace PEFT
-		\item Published \colorhref{https://www.frontiersin.org/journals/systems-biology/articles/10.3389/fsysb.2025.1544432/full}{MicrobiomeKG}, a 115k-edge microbiome knowledge graph spanning 40 curated papers with ResNet-based edge scoring
+		\item Engineered MultiomicsKG, a 1M+ edge multiomics knowledge graph integrating genomics, proteomics, and microbiome data across 52+ curated papers for the NCATS Biomedical Data Translator; a superset of published MicrobiomeKG
+		\item Designed \colorhref{https://github.com/SkyeAv/Tablassist}{Tablassist}, a polyglot AI-orchestration platform ($\sim$4.7k LOC, 7 internal users) dual-published to PyPI (Python CLI, 30+ commands) and npm (TypeScript OpenCode plugin); wires a 5-agent system (Configurator/Pioneer/Builder/Scout/Extractor) with ledger-backed autonomous PMC discovery surviving context resets, validation-as-a-hook on YAML writes, and ground-truth Biolink schema injection
+		\item Refactored knowledge-graph extraction in \colorhref{https://skyeav.github.io/Tablassert/}{Tablassert} (PyPI + GHCR, v7.3.6, Production/Stable) from 800GB SQLite to 250GB DuckDB OLAP while cutting query time from \textasciitilde 10 min to 4--11\,s (\textasciitilde 100--1000$\times$) using Polars lazy frames, Pydantic v2 strict models (170+ Biolink categories), and 3-stage entity-resolution QC (exact $\rightarrow$ RapidFuzz $\rightarrow$ BioBERT/ONNX)
+		\item Built Go infrastructure for biomedical entity resolution: \colorhref{https://github.com/SkyeAv/datassert}{Datassert}, a 4-stage ETL sharding BABEL exports across 10 indexed DuckDBs via xxhash64 with cache-line-padded mutexes and bounded errgroup parallelism; and a \colorhref{https://github.com/SkyeAv/configurator-api}{Gin API} exposing CURIE-resolution and PMC-streaming endpoints with custom Redis auth (SHA-256 $\rightarrow$ xxhash64) over a 15\,TB PMC mirror
+		\item Co-mentored a master's student on a \colorhref{https://github.com/SkyeAv/CTClassifier}{clinical trial classifier}, extending the pipeline with BERT sentence transformers, incremental PCA, Autoencoders, and LightGBM to lift AUC from 0.63 to 0.90 across 3 datasets
+		\item Published \colorhref{https://www.frontiersin.org/journals/systems-biology/articles/10.3389/fsysb.2025.1544432/full}{MicrobiomeKG}, a 115k-edge microbiome KG spanning 40 curated papers with ResNet-based edge scoring
 	\end{itemize}
 }
 
