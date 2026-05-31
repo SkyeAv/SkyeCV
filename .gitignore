@@ -7,3 +7,9 @@
 *plans/
 *.log
 *.md
+*.blg
+*.aux
+*.fls
+*.out
+*.xdv
+*.fdb*
